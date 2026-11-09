@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: math-api
+
+management:
+  endpoint:
+    health:
+      probes:
+        # Boot 4 enables probes by default, which adds a "groups" key to /actuator/health (UC-001 R-2: status only).
+        enabled: false
+  health:
+    readinessstate:
+      # Readiness drives /actuator/health: OUT_OF_SERVICE/503 while refusing traffic (UC-001 R-1).
+      enabled: true
