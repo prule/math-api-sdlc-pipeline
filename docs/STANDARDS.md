@@ -58,6 +58,7 @@ config ──────────► all
 - Errors MUST be RFC 9457 Problem Details via Spring `ProblemDetail`, from a single `@RestControllerAdvice`. Each error has a stable `type` URI listed in the PRD.
 - Status codes: `400` invalid input; `422` valid input that violates a domain rule.
 - Every endpoint MUST appear correctly in the generated OpenAPI docs: an explicit `@ApiResponse` for each status it returns (including the 200's media type, which springdoc otherwise documents as `*/*`), and a `application/problem+json` example for each Problem Details `type`. `ApiDocumentationTest` enforces this; extend it with every new endpoint or error type.
+- Each documented Problem Details example MUST be the exact body the service returns for a named request; `ApiDocumentationTest` sends that request and compares the bodies.
 - Documented values that come from the domain (e.g. allowed `operation` names) MUST be generated from it (`config.OpenApiConfig`), never copied into annotations.
 
 ## 5. Code style
@@ -103,3 +104,4 @@ Write tests first (red → green → refactor).
 | Date | Change |
 |------|--------|
 | 2026-11-09 | Copied from math-api (its final v1 docs) as the target for the sdlc-pipeline rebuild |
+| 2026-11-09 | §4: documented Problem Details examples are checked against the live response (UC-005) |

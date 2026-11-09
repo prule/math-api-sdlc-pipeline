@@ -6,8 +6,8 @@ import java.util.Objects;
 public record Calculation(Operation operation, BigDecimal a, BigDecimal b) {
 
     // BR-1
-    private static final int MAX_SIGNIFICANT_DIGITS = 100;
-    private static final int MAX_SCALE = 1000;
+    public static final int MAX_SIGNIFICANT_DIGITS = 100;
+    public static final int MAX_SCALE = 1000;
 
     public Calculation {
         Objects.requireNonNull(operation, "operation");
