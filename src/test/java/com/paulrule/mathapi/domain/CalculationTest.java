@@ -2,8 +2,10 @@ package com.paulrule.mathapi.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 import java.math.BigDecimal;
+import java.time.Duration;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -153,6 +155,106 @@ class CalculationTest {
                 .message()
                 .doesNotContain("98765")
                 .doesNotContain("0.00");
+    }
+
+    private static Calculation calculation(Operation operation, String a, String b) {
+        return new Calculation(operation, new BigDecimal(a), new BigDecimal(b));
+    }
+
+    // BR-1: an Operand, as written, has at most 100 significant digits and a scale from -1000 to 1000
+
+    @Test
+    void acceptsAScaleOfMinusOneThousand() {
+        assertThat(calculation(Operation.ADD, "1E+1000", "0").a()).isEqualTo(new BigDecimal("1E+1000"));
+    }
+
+    @Test
+    void acceptsAScaleOfOneThousand() {
+        assertThat(calculation(Operation.ADD, "1E-1000", "0").a()).isEqualTo(new BigDecimal("1E-1000"));
+    }
+
+    @Test
+    void acceptsOneHundredSignificantDigits() {
+        var digits = "1".repeat(100);
+        assertThat(calculation(Operation.MULTIPLY, digits, "1").a()).isEqualTo(new BigDecimal(digits));
+    }
+
+    @Test
+    void measuresAnOperandAsWritten() {
+        assertThat(calculation(Operation.MULTIPLY, "1E+100", "1").a()).isEqualTo(new BigDecimal("1E+100"));
+    }
+
+    @Test
+    void rejectsAScaleOfMinusOneThousandAndOne() {
+        assertThatThrownBy(() -> calculation(Operation.ADD, "1E+1001", "1"))
+                .isInstanceOf(OperandOutOfRangeException.class)
+                .hasMessageContaining("Operand a");
+    }
+
+    @Test
+    void rejectsAScaleOfOneThousandAndOneInB() {
+        assertThatThrownBy(() -> calculation(Operation.ADD, "1", "1E-1001"))
+                .isInstanceOf(OperandOutOfRangeException.class)
+                .hasMessageContaining("Operand b");
+    }
+
+    @Test
+    void rejectsOneHundredAndOneSignificantDigitsEvenForASmallValue() {
+        assertThatThrownBy(() -> calculation(Operation.ADD, "1" + "0".repeat(100), "1"))
+                .isInstanceOf(OperandOutOfRangeException.class);
+    }
+
+    @Test
+    void rejectsAShortButEnormousOperandAtOnce() {
+        // BR-1, UC-004 R-4
+        assertTimeoutPreemptively(
+                Duration.ofSeconds(1),
+                () -> assertThatThrownBy(() -> calculation(Operation.MULTIPLY, "1e999999999", "1e999999999"))
+                        .isInstanceOf(OperandOutOfRangeException.class));
+    }
+
+    @Test
+    void rejectsEnormousScalesInADivisionBeforeAnyArithmetic() {
+        assertThatThrownBy(() -> calculation(Operation.DIVIDE, "1E-999999999", "1E+999999999"))
+                .isInstanceOf(OperandOutOfRangeException.class);
+    }
+
+    @Test
+    void checksOperandABeforeOperandB() {
+        // UC-004 R-3
+        assertThatThrownBy(() -> calculation(Operation.ADD, "1E+1001", "1E-1001"))
+                .isInstanceOf(OperandOutOfRangeException.class)
+                .message()
+                .contains("Operand a")
+                .doesNotContain("Operand b");
+    }
+
+    @Test
+    void reportsOperandOutOfRangeBeforeDivisionByZero() {
+        // UC-004 R-3: thrown by the constructor, so result() and BR-2 are never reached
+        assertThatThrownBy(() -> calculation(Operation.DIVIDE, "1E+1001", "0"))
+                .isInstanceOf(OperandOutOfRangeException.class);
+    }
+
+    @Test
+    void operandOutOfRangeReasonEchoesNoValue() {
+        // UC-004 R-2
+        assertThatThrownBy(() -> calculation(Operation.ADD, "1", "98765E+1001"))
+                .isInstanceOf(OperandOutOfRangeException.class)
+                .message()
+                .contains("Operand b")
+                .doesNotContain("98765")
+                .doesNotContain("98765E+1001")
+                // the value's own rendering, 9.8765E+1005
+                .doesNotContain("8765");
+    }
+
+    @Test
+    void rejectsTheMostNegativeScale() {
+        // BR-1: scale Integer.MIN_VALUE; the domain must not rely on the adapter to refuse it
+        assertThatThrownBy(() -> calculation(Operation.ADD, "1e2147483648", "1"))
+                .isInstanceOf(OperandOutOfRangeException.class)
+                .hasMessageContaining("Operand a");
     }
 
     @Test

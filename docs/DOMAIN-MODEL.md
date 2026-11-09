@@ -32,7 +32,7 @@ Operation.apply(a, b) → Result   (b is null for a unary Operation)
 - Each `Operation` constant declares its arity and implements `apply(BigDecimal a, BigDecimal b)`; a unary constant ignores `b`.
 - Adding an operation = one new constant with its arity + its business rules here + tests. A new kind of failure also needs a domain exception and its Problem Details handler; nothing else changes.
 - `Operation.named(name)` is an exact, case-sensitive lookup; any other name raises `UnknownOperationException`.
-- The `Calculation` constructor checks BR-9 (arity), then BR-1 on each Operand present.
+- The `Calculation` constructor checks BR-9 (arity), then BR-1 on `a`, then on `b` (only the first failure is reported).
 - `Calculation.result()` applies the Operation and normalises the Result (BR-4 trailing-zero stripping). Plain-notation rendering happens at the web adapter.
 - Domain failures are domain exceptions (`UnknownOperationException`, `ArityMismatchException`, `DivisionByZeroException`, `OperandOutOfRangeException`, `InvalidExponentException`, `NegativeSquareRootException`, `ResultOutOfRangeException`); the web adapter maps them to Problem Details.
 
@@ -68,3 +68,4 @@ Operation.apply(a, b) → Result   (b is null for a unary Operation)
 | Date | Change |
 |------|--------|
 | 2026-11-09 | Copied from math-api (its final v1 docs) as the target for the sdlc-pipeline rebuild |
+| 2026-11-09 | §2: BR-1 checks `a` before `b` (UC-004) |

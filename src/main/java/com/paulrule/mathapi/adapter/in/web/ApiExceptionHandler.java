@@ -1,6 +1,7 @@
 package com.paulrule.mathapi.adapter.in.web;
 
 import com.paulrule.mathapi.domain.DivisionByZeroException;
+import com.paulrule.mathapi.domain.OperandOutOfRangeException;
 import com.paulrule.mathapi.domain.UnknownOperationException;
 import java.net.URI;
 import org.jspecify.annotations.Nullable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import tools.jackson.core.exc.StreamConstraintsException;
 
 /**
  * The single advice mapping failures to RFC 9457 Problem Details (PRD §3.2). Spring MVC's own errors come from the superclass
@@ -26,6 +28,7 @@ class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     private static final URI INVALID_REQUEST = URI.create("/problems/invalid-request");
     private static final URI UNKNOWN_OPERATION = URI.create("/problems/unknown-operation");
     private static final URI DIVISION_BY_ZERO = URI.create("/problems/division-by-zero");
+    private static final URI OPERAND_OUT_OF_RANGE = URI.create("/problems/operand-out-of-range");
     private static final URI ABOUT_BLANK = URI.create("about:blank");
 
     // Spring Framework 7 leaves ProblemDetail.type null, which omits it from the JSON; R-7 wants it explicit.
@@ -42,6 +45,13 @@ class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     protected @Nullable ResponseEntity<Object> handleHttpMessageNotReadable(
             HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
         // The parser's own message names Jackson classes, so it is never copied (R-7).
+        if (ex.getMostSpecificCause() instanceof StreamConstraintsException) {
+            // UC-004 R-1
+            return ResponseEntity.badRequest()
+                    .body(
+                            invalidRequest(
+                                    "The request is too large: at most 16,384 bytes in total, and at most 1,000 characters for any value."));
+        }
         return ResponseEntity.badRequest()
                 .body(invalidRequest("The request body is not valid JSON, or an Operand is not a decimal number."));
     }
@@ -58,6 +68,14 @@ class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         var problem = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, ex.getMessage());
         problem.setType(UNKNOWN_OPERATION);
         problem.setTitle("Unknown operation");
+        return problem;
+    }
+
+    @ExceptionHandler(OperandOutOfRangeException.class)
+    ProblemDetail handleOperandOutOfRange(OperandOutOfRangeException ex) {
+        var problem = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, ex.getMessage());
+        problem.setType(OPERAND_OUT_OF_RANGE);
+        problem.setTitle("Operand out of range");
         return problem;
     }
 

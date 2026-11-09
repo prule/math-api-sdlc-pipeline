@@ -60,8 +60,8 @@ A unary Operation takes no `b`, and its response has no `b` key:
 - `a` and `b` are echoed as received, in plain notation and with their given scale (`1e2` → `"100"`, `"1.50"` → `"1.50"`). Only `result` is normalised (BR-4).
 - Every error response (including framework errors such as 415) is Problem Details with `type`, `title`, `status` and a human-readable `detail` that exposes no internals.
 - Errors outside the table below (for example `404`, `405`, `415`) use `type` `about:blank` with the HTTP status phrase as `title` (RFC 9457 §4.2.1).
-- Request limits: a body over 16,384 characters, or any JSON string or number over 1,000 characters, is rejected as `invalid-request` before parsing into numbers. Operand limits (BR-1) are reported as `operand-out-of-range`, naming the operand but never echoing its value.
-- Only the first failure is reported, checked in this order: invalid request → unknown operation → operand count (BR-9, reported as invalid request) → operand out of range (BR-1) → invalid exponent (BR-5) → division by zero (BR-2) → negative square root (BR-8) → result out of range (BR-6).
+- Request limits: a body over 16,384 characters (counted as bytes of the UTF-8 body), or any JSON string or number over 1,000 characters, is rejected as `invalid-request` before parsing into numbers. Operand limits (BR-1) are reported as `operand-out-of-range`, naming the operand but never echoing its value. A number the API cannot parse as a decimal (for example `1e2147483648`, whose exponent is out of the parser's range) is `invalid-request`.
+- Only the first failure is reported, checked in this order: invalid request → unknown operation → operand count (BR-9, reported as invalid request) → operand out of range (BR-1, `a` before `b`) → invalid exponent (BR-5) → division by zero (BR-2) → negative square root (BR-8) → result out of range (BR-6).
 
 `GET /api/v1/operations` lists the supported Operations, derived from the domain so it always matches what `POST /api/v1/calculations` accepts:
 
@@ -129,3 +129,4 @@ Path-based (`/api/v1`). Adding an operation is non-breaking and stays in v1. Any
 | 2026-11-09 | Copied from math-api (its final v1 docs) as the target for the sdlc-pipeline rebuild |
 | 2026-11-09 | §3.3: `GET /actuator/health` contract defined — `200` `UP` when ready, `503` `OUT_OF_SERVICE` while starting or shutting down, status only, no auth, no other management endpoint exposed (UC-001) |
 | 2026-11-09 | §3.2: errors outside the error table (for example `404`, `405`, `415`) use `type` `about:blank` with the HTTP status phrase as `title` (UC-002) |
+| 2026-11-09 | §3.2: Operand `a` is checked against BR-1 before `b`; the body limit counts UTF-8 bytes; an unrepresentable number is invalid-request (UC-004) |

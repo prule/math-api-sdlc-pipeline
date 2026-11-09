@@ -1,6 +1,14 @@
 spring:
   application:
     name: math-api
+  jackson:
+    factory:
+      constraints:
+        read:
+          # UC-004 R-1 (PRD §3.2): fixed request limits, checked by the parser before any value becomes a number.
+          max-document-length: 16384
+          max-string-length: 1000
+          max-number-length: 1000
 
 management:
   endpoint:

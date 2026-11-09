@@ -27,9 +27,9 @@ link here by id, so a lesson that comes back adds a count, not another copy of i
 
 | Id | Recommendation | Target | Records | Status |
 |---|---|---|---|---|
-| L-1 | Implementer updates design.md and tasks.md in the same apply step when it departs from them (new dependency, pin, or unplanned config) | `.claude/sdlc-profile.md`; plugin `agents/junior-dev.md` | 1 | open |
+| L-1 | Implementer updates design.md and tasks.md in the same apply step when it departs from them (new dependency, pin, or unplanned config) | `.claude/sdlc-profile.md`; plugin `agents/junior-dev.md` | 2 | open |
 | L-2 | List the exact Boot 4 starter and test artifacts (and the dependency-management pin) in the STANDARDS §1 Stack table | `docs/STANDARDS.md` | 1 | open |
-| L-3 | Design lists the framework defaults it relies on, each confirmed against the pinned version | `openspec/config.yaml` | 1 | open |
+| L-3 | Design lists the framework defaults it relies on, each confirmed against the pinned version | `openspec/config.yaml` | 2 | open |
 | L-4 | Spec delta has one scenario per status a PRD error bullet lists | `.claude/sdlc-profile.md` (Plan review) | 1 | open |
 | L-5 | ArchUnit layer rules also check test classes; slice tests import application classes, never `config` | `docs/STANDARDS.md §2`; `.claude/sdlc-profile.md` | 1 | open |
 | L-6 | Failing-test-first tasks ask for the pasted red test output before the implementing task | `openspec/config.yaml` (rules.tasks) | 1 | open |
@@ -37,6 +37,11 @@ link here by id, so a lesson that comes back adds a count, not another copy of i
 | L-8 | Settle arity timing: `Operation.arity()` arrives with the first unary Operation; align STANDARDS §3 and the DOMAIN-MODEL glossary | `docs/STANDARDS.md`; `docs/DOMAIN-MODEL.md` | 1 | open |
 | L-9 | Tasks write BigDecimal test values as `new BigDecimal("<text>")` | `.claude/sdlc-profile.md` | 1 | open |
 | L-10 | If a change makes a capability's Purpose line untrue, add a task to correct it after archive | `openspec/config.yaml` (rules.tasks) | 1 | open |
+| L-11 | An assumption that changes a PRD statement also updates the spec requirement and user-facing messages that restate it | `openspec/config.yaml` (rules.design) | 1 | open |
+| L-12 | Use-case edge-case prompt asks about values the platform cannot represent at all | plugin `write-use-case` template | 1 | open |
+| L-13 | Every design "Required:"/"Do not" constraint has a named test in tasks.md that fails if broken | `openspec/config.yaml` (rules.tasks) | 1 | open |
+| L-14 | "Never echoes the value" scenarios assert against `toString()`/`toPlainString()` forms too | `openspec/config.yaml` (rules.specs) | 1 | open |
+| L-15 | Spec reviewer computes every BR-n boundary example's precision/scale and checks its in/out label | plugin `agents/spec-reviewer.md`; `.claude/sdlc-profile.md` | 1 | open |
 
 ## Closed
 

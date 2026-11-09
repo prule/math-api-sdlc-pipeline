@@ -3,7 +3,7 @@ package com.paulrule.mathapi.domain;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-/** The given name is deliberately not carried: it is unbounded until B-4 (R-7). */
+/** The given name is never echoed (UC-002 R-3). */
 public class UnknownOperationException extends RuntimeException {
 
     public UnknownOperationException() {

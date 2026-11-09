@@ -5,7 +5,7 @@
      Entries mirror the original math-api backlog one-for-one (see "Original item") so the two builds can be compared.
      Original item 5b (repo hygiene, from its v2 audit of its own code) has no entry. -->
 
-## MVP (3/5 built)
+## MVP (4/5 built)
 
 - [x] **B-1: Check the service is available** — built: [UC-001](use-cases/UC-001-check-service-availability.md), change add-service-availability
   - **Actor:** Client service
@@ -25,7 +25,7 @@
   - **Why here:** Completes the four basic Operations promised by v1.
   - **Depends on:** B-2
   - **Original item:** 3 (`add-divide`)
-- [ ] **B-4: Reject Operands outside the limits**
+- [x] **B-4: Reject Operands outside the limits** — built: [UC-004](use-cases/UC-004-reject-operands-outside-limits.md), change reject-operands-outside-limits
   - **Actor:** Client service
   - **Goal:** Have an out-of-range Operand (BR-1) or an oversized request rejected before any arithmetic.
   - **Why here:** Closes the resource-exhaustion hole before anyone else calls the API.
