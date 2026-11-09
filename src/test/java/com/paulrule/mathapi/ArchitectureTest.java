@@ -10,14 +10,13 @@ import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 import org.junit.jupiter.api.Test;
 
-/** STANDARDS.md §2. Rules allow empty layers because the layer packages fill up from B-2 onwards. */
+/** STANDARDS.md §2. Every layer has a class, so a rule that matches nothing fails instead of passing vacuously. */
 @AnalyzeClasses(packages = "com.paulrule.mathapi")
 class ArchitectureTest {
 
     @ArchTest
     static final ArchRule layers = layeredArchitecture()
             .consideringOnlyDependenciesInLayers()
-            .withOptionalLayers(true)
             .layer("Domain")
             .definedBy("..domain..")
             .layer("Application")
@@ -33,8 +32,7 @@ class ArchitectureTest {
             .whereLayer("Adapter")
             .mayOnlyBeAccessedByLayers("Config")
             .whereLayer("Config")
-            .mayNotBeAccessedByAnyLayer()
-            .allowEmptyShould(true);
+            .mayNotBeAccessedByAnyLayer();
 
     @ArchTest
     static final ArchRule domainDependsOnNoFramework = noClasses()
@@ -42,8 +40,7 @@ class ArchitectureTest {
             .resideInAPackage("..domain..")
             .should()
             .dependOnClassesThat()
-            .resideInAnyPackage("org.springframework..", "jakarta..", "com.fasterxml..", "tools.jackson..")
-            .allowEmptyShould(true);
+            .resideInAnyPackage("org.springframework..", "jakarta..", "com.fasterxml..", "tools.jackson..");
 
     @ArchTest
     static final ArchRule applicationDependsOnNoWebOrAdapter = noClasses()
@@ -51,8 +48,7 @@ class ArchitectureTest {
             .resideInAPackage("..application..")
             .should()
             .dependOnClassesThat()
-            .resideInAnyPackage("org.springframework.web..", "..adapter..")
-            .allowEmptyShould(true);
+            .resideInAnyPackage("org.springframework.web..", "..adapter..");
 
     @Test
     void domainRuleRejectsAFrameworkDependentDomainClass() {

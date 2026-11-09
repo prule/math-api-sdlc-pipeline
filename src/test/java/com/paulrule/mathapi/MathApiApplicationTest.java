@@ -1,6 +1,7 @@
 package com.paulrule.mathapi;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -12,9 +13,13 @@ import org.springframework.boot.availability.ReadinessState;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.context.ApplicationContext;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-/** Service availability (UC-001), through Actuator's health endpoint. */
+/**
+ * Service availability (UC-001), through Actuator's health endpoint, and the end-to-end Calculation smoke test
+ * (UC-002).
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 class MathApiApplicationTest {
@@ -78,5 +83,14 @@ class MathApiApplicationTest {
                     .andExpect(status().isOk())
                     .andExpect(content().string(UP));
         }
+    }
+
+    @Test
+    void performsAnAdditionEndToEnd() throws Exception {
+        mvc.perform(post("/api/v1/calculations")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"operation\":\"ADD\",\"a\":\"0.1\",\"b\":\"0.2\"}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result").value("0.3"));
     }
 }

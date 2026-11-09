@@ -5,7 +5,7 @@
      Entries mirror the original math-api backlog one-for-one (see "Original item") so the two builds can be compared.
      Original item 5b (repo hygiene, from its v2 audit of its own code) has no entry. -->
 
-## MVP (1/5 built)
+## MVP (2/5 built)
 
 - [x] **B-1: Check the service is available** — built: [UC-001](use-cases/UC-001-check-service-availability.md), change add-service-availability
   - **Actor:** Client service
@@ -13,7 +13,7 @@
   - **Why here:** Every later entry needs a running, buildable service; this one carries no business behaviour.
   - **Depends on:** None
   - **Original item:** 1, walking skeleton (`add-walking-skeleton`)
-- [ ] **B-2: Perform an exact Calculation (ADD, SUBTRACT, MULTIPLY)**
+- [x] **B-2: Perform an exact Calculation (ADD, SUBTRACT, MULTIPLY)** — built: [UC-002](use-cases/UC-002-perform-exact-calculation.md), change add-exact-calculation
   - **Actor:** Client service
   - **Goal:** Get the exact Result of adding, subtracting or multiplying two Operands, or a clear rejection of an invalid or unknown request.
   - **Why here:** The core goal itself, for the Operations that need no rounding.
