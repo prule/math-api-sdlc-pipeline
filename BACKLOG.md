@@ -5,9 +5,9 @@
      Entries mirror the original math-api backlog one-for-one (see "Original item") so the two builds can be compared.
      Original item 5b (repo hygiene, from its v2 audit of its own code) has no entry. -->
 
-## MVP (0/5 built)
+## MVP (1/5 built)
 
-- [ ] **B-1: Check the service is available**
+- [x] **B-1: Check the service is available** — built: [UC-001](use-cases/UC-001-check-service-availability.md), change add-service-availability
   - **Actor:** Client service
   - **Goal:** Learn whether the service is up and ready to accept Calculations.
   - **Why here:** Every later entry needs a running, buildable service; this one carries no business behaviour.

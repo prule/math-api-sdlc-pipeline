@@ -85,7 +85,7 @@ Errors use RFC 9457 Problem Details (`application/problem+json`):
 
 ### 3.3 Supporting endpoints
 
-- `GET /actuator/health` — liveness/readiness.
+- `GET /actuator/health` — whether the service is ready to accept Calculations (UC-001). `200` with `{"status":"UP"}` when ready; `503` with a status-only body (`{"status":"OUT_OF_SERVICE"}`) while starting or shutting down. The body holds only `status`: no components, details, versions or configuration. No authentication. No other management endpoint is exposed over HTTP.
 - OpenAPI 3.1 docs via springdoc: `/v3/api-docs` (JSON), `/swagger-ui.html` (interactive). The allowed `operation` values are generated from the domain, so a new Operation appears without doc edits. Unauthenticated, like the API in v1. **On by default; off under the `prod` profile** (`SPRING_PROFILES_ACTIVE=prod`), where `/v3/api-docs`, `/swagger-ui.html`, `/swagger-ui/**` and the swagger-ui webjar return 404. Each part can still be switched on its own via `springdoc.api-docs.enabled` / `springdoc.swagger-ui.enabled`.
 
 ### 3.4 Versioning
@@ -126,3 +126,4 @@ Path-based (`/api/v1`). Adding an operation is non-breaking and stays in v1. Any
 | Date | Change |
 |------|--------|
 | 2026-11-09 | Copied from math-api (its final v1 docs) as the target for the sdlc-pipeline rebuild |
+| 2026-11-09 | §3.3: `GET /actuator/health` contract defined — `200` `UP` when ready, `503` `OUT_OF_SERVICE` while starting or shutting down, status only, no auth, no other management endpoint exposed (UC-001) |

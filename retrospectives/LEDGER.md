@@ -27,6 +27,9 @@ link here by id, so a lesson that comes back adds a count, not another copy of i
 
 | Id | Recommendation | Target | Records | Status |
 |---|---|---|---|---|
+| L-1 | Implementer updates design.md and tasks.md in the same apply step when it departs from them (new dependency, pin, or unplanned config) | `.claude/sdlc-profile.md`; plugin `agents/junior-dev.md` | 1 | open |
+| L-2 | List the exact Boot 4 starter and test artifacts (and the dependency-management pin) in the STANDARDS §1 Stack table | `docs/STANDARDS.md` | 1 | open |
+| L-3 | Design lists the framework defaults it relies on, each confirmed against the pinned version | `openspec/config.yaml` | 1 | open |
 
 ## Closed
 
