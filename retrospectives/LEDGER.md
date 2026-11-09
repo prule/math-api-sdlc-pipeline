@@ -30,6 +30,12 @@ link here by id, so a lesson that comes back adds a count, not another copy of i
 | L-1 | Implementer updates design.md and tasks.md in the same apply step when it departs from them (new dependency, pin, or unplanned config) | `.claude/sdlc-profile.md`; plugin `agents/junior-dev.md` | 1 | open |
 | L-2 | List the exact Boot 4 starter and test artifacts (and the dependency-management pin) in the STANDARDS §1 Stack table | `docs/STANDARDS.md` | 1 | open |
 | L-3 | Design lists the framework defaults it relies on, each confirmed against the pinned version | `openspec/config.yaml` | 1 | open |
+| L-4 | Spec delta has one scenario per status a PRD error bullet lists | `.claude/sdlc-profile.md` (Plan review) | 1 | open |
+| L-5 | ArchUnit layer rules also check test classes; slice tests import application classes, never `config` | `docs/STANDARDS.md §2`; `.claude/sdlc-profile.md` | 1 | open |
+| L-6 | Failing-test-first tasks ask for the pasted red test output before the implementing task | `openspec/config.yaml` (rules.tasks) | 1 | open |
+| L-7 | An accepted risk that breaks a spec requirement names it, for Gate 1 to accept | `openspec/config.yaml` (rules.design) | 1 | open |
+| L-8 | Settle arity timing: `Operation.arity()` arrives with the first unary Operation; align STANDARDS §3 and the DOMAIN-MODEL glossary | `docs/STANDARDS.md`; `docs/DOMAIN-MODEL.md` | 1 | open |
+| L-9 | Tasks write BigDecimal test values as `new BigDecimal("<text>")` | `.claude/sdlc-profile.md` | 1 | open |
 
 ## Closed
 

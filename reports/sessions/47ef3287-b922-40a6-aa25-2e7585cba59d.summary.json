@@ -10,90 +10,90 @@
     "model": "claude-opus-5-5",
     "effort": "medium",
     "tokens": {
-      "input": 348,
-      "cache_write": 353097,
-      "cache_read": 17792736,
-      "output": 103024
+      "input": 562,
+      "cache_write": 494185,
+      "cache_read": 33457050,
+      "output": 162554
     }
   },
   "agents": {
     "architect": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 2,
-      "duration_s": 196.7,
-      "tool_calls": 13,
+      "runs": 4,
+      "duration_s": 539.6,
+      "tool_calls": 32,
       "tokens": {
-        "input": 44,
-        "cache_write": 116255,
-        "cache_read": 839178,
-        "output": 46471
+        "input": 110,
+        "cache_write": 282100,
+        "cache_read": 2754012,
+        "output": 118481
       }
     },
     "junior-dev": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 1,
-      "duration_s": 206.0,
-      "tool_calls": 22,
+      "runs": 2,
+      "duration_s": 477.1,
+      "tool_calls": 47,
       "tokens": {
-        "input": 92,
-        "cache_write": 77628,
-        "cache_read": 1874170,
-        "output": 30277
+        "input": 182,
+        "cache_write": 198365,
+        "cache_read": 4383533,
+        "output": 84224
       }
     },
     "qa": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 1,
-      "duration_s": 109.9,
-      "tool_calls": 9,
+      "runs": 2,
+      "duration_s": 284.7,
+      "tool_calls": 24,
       "tokens": {
-        "input": 34,
-        "cache_write": 87613,
-        "cache_read": 503225,
-        "output": 13450
+        "input": 98,
+        "cache_write": 229225,
+        "cache_read": 2148576,
+        "output": 45395
       }
     },
     "senior-dev": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 1,
-      "duration_s": 50.5,
-      "tool_calls": 6,
+      "runs": 2,
+      "duration_s": 151.3,
+      "tool_calls": 19,
       "tokens": {
-        "input": 18,
-        "cache_write": 50371,
-        "cache_read": 253152,
-        "output": 12605
+        "input": 58,
+        "cache_write": 136392,
+        "cache_read": 1047052,
+        "output": 23537
       }
     },
     "spec-reviewer": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 1,
-      "duration_s": 57.9,
-      "tool_calls": 5,
+      "runs": 2,
+      "duration_s": 147.7,
+      "tool_calls": 11,
       "tokens": {
-        "input": 14,
-        "cache_write": 49592,
-        "cache_read": 84694,
-        "output": 10301
+        "input": 32,
+        "cache_write": 120061,
+        "cache_read": 266170,
+        "output": 26922
       }
     }
   },
   "time": {
-    "wall_s": 2042.8,
-    "agents_s": 621.1,
-    "human_wait_s": 253.9,
-    "orchestrator_s": 1167.8
+    "wall_s": 5632.0,
+    "agents_s": 1600.3,
+    "human_wait_s": 2289.4,
+    "orchestrator_s": 1742.3
   },
   "tokens": {
-    "input": 550,
-    "cache_write": 734556,
-    "cache_read": 21347155,
-    "output": 216128
+    "input": 1042,
+    "cache_write": 1460328,
+    "cache_read": 44056393,
+    "output": 461113
   },
   "runs": [
     {
@@ -217,6 +217,132 @@
       "findings": [
         "C1"
       ]
+    },
+    {
+      "id": "toolu_01Ae4jkRw35dpxicEi84weok",
+      "agent": "architect",
+      "description": "Architect UC-002 plan",
+      "start": "2026-11-09T06:49:07.863000Z",
+      "duration_s": 295.4,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 14,
+      "tokens": {
+        "input": 46,
+        "cache_write": 152023,
+        "cache_read": 1183265,
+        "output": 64284
+      },
+      "verdict": null,
+      "verdict_source": null,
+      "findings": []
+    },
+    {
+      "id": "toolu_017Fz6YJqT2bcUnGzQXYJwEG",
+      "agent": "spec-reviewer",
+      "description": "Spec review add-exact-calculation",
+      "start": "2026-11-09T06:54:11.819000Z",
+      "duration_s": 89.8,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 6,
+      "tokens": {
+        "input": 18,
+        "cache_write": 70469,
+        "cache_read": 181476,
+        "output": 16621
+      },
+      "verdict": "handed-back",
+      "verdict_source": "findings",
+      "findings": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    {
+      "id": "toolu_01YKcrR2PRHfb9VEfJUDAYDL",
+      "agent": "architect",
+      "description": "Gate 1 approved; fold in P1,P3,P4,P5",
+      "start": "2026-11-09T06:57:56.989000Z",
+      "duration_s": 47.4,
+      "resumed": true,
+      "linked_by": "resume",
+      "tool_calls": 5,
+      "tokens": {
+        "input": 20,
+        "cache_write": 13822,
+        "cache_read": 731569,
+        "output": 7726
+      },
+      "verdict": null,
+      "verdict_source": null,
+      "findings": []
+    },
+    {
+      "id": "toolu_01FCMsCSdpmzLVb8RU3rbvYB",
+      "agent": "junior-dev",
+      "description": "Implement UC-002",
+      "start": "2026-11-09T06:58:51.359000Z",
+      "duration_s": 271.0,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 25,
+      "tokens": {
+        "input": 90,
+        "cache_write": 120737,
+        "cache_read": 2509363,
+        "output": 53947
+      },
+      "verdict": null,
+      "verdict_source": null,
+      "findings": []
+    },
+    {
+      "id": "toolu_01AEU8HoZjikAkhhGJNMiRcw",
+      "agent": "qa",
+      "description": "QA verify add-exact-calculation",
+      "start": "2026-11-09T07:03:31.411000Z",
+      "duration_s": 174.8,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 15,
+      "tokens": {
+        "input": 64,
+        "cache_write": 141612,
+        "cache_read": 1645351,
+        "output": 31945
+      },
+      "verdict": "handed-back",
+      "verdict_source": "findings",
+      "findings": [
+        "Q1",
+        "Q2",
+        "Q3"
+      ]
+    },
+    {
+      "id": "toolu_01NHZaDBvyKgNL9QoRbdt9xa",
+      "agent": "senior-dev",
+      "description": "Code review add-exact-calculation",
+      "start": "2026-11-09T07:06:34.627000Z",
+      "duration_s": 100.7,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 13,
+      "tokens": {
+        "input": 40,
+        "cache_write": 86021,
+        "cache_read": 793900,
+        "output": 10932
+      },
+      "verdict": "fixed-in-place",
+      "verdict_source": "findings",
+      "findings": [
+        "C1",
+        "C2"
+      ]
     }
   ],
   "findings": [
@@ -279,6 +405,114 @@
       "recommendation": "add an implementation rule that any change from design.md or tasks.md (a new dependency or version pin, or a config property the design did not name) must update both files in the same apply step, before QA → .claude/sdlc-profile.md (Implementation rules) and agents/junior-dev.md. I did not run the CI workflow (it is first proven on a push). I did not repeat the misformat check from task 2.4, or the check that the fixture test fails first. No open risks.",
       "gate": "senior-dev",
       "run": "toolu_01JTixJnHDAQ6L5ctopgY3S8"
+    },
+    {
+      "id": "P1",
+      "kind": "plan-defect",
+      "severity": "advisory",
+      "rule": "docs/PRD.md §3.2 (Problem Details bullet) / UC-002 R-7",
+      "where": "design.md § Risks / Trade-offs, design.md § Decisions 4",
+      "status": "handed-back",
+      "root_cause": "plan omission. The accepted B-4 risk was recorded as \"a 500\" without noting that it conflicts with the spec's own \"every error response is Problem Details\" requirement.",
+      "recommendation": "add a rule that any accepted risk which breaks a spec requirement must name that requirement and say whether Gate 1 accepts it → openspec/config.yaml (rules.design)",
+      "gate": "spec-reviewer",
+      "run": "toolu_017Fz6YJqT2bcUnGzQXYJwEG"
+    },
+    {
+      "id": "P2",
+      "kind": "standards-violation",
+      "severity": "advisory",
+      "rule": "docs/STANDARDS.md §3, docs/DOMAIN-MODEL.md §1 (Arity)",
+      "where": "design.md § Goals / Non-Goals",
+      "status": "handed-back",
+      "root_cause": "unclear standard. STANDARDS §3 requires arity on every constant, while §5 forbids speculative fields, and nothing says which wins before a unary Operation exists.",
+      "recommendation": "clarify STANDARDS §3 so arity() lands with the first unary Operation (B-7), or require it from B-2. Either way, update the DOMAIN-MODEL glossary to match → docs/STANDARDS.md",
+      "gate": "spec-reviewer",
+      "run": "toolu_017Fz6YJqT2bcUnGzQXYJwEG"
+    },
+    {
+      "id": "P3",
+      "kind": "test-gap",
+      "severity": "advisory",
+      "rule": "docs/STANDARDS.md §3 (BigDecimal only)",
+      "where": "tasks.md § 3.1",
+      "status": "handed-back",
+      "root_cause": "model slip. Shorthand numeric literals in a task meant for a junior implementer.",
+      "recommendation": "add an architect instruction that tasks write BigDecimal test values as new BigDecimal(\"<text>\") → .claude/sdlc-profile.md (Implementation rules)",
+      "gate": "spec-reviewer",
+      "run": "toolu_017Fz6YJqT2bcUnGzQXYJwEG"
+    },
+    {
+      "id": "P4",
+      "kind": "plan-defect",
+      "severity": "advisory",
+      "rule": "docs/STANDARDS.md §2 (ArchUnit enforcement)",
+      "where": "design.md § Risks / Trade-offs",
+      "status": "handed-back",
+      "root_cause": "plan omission. A temporary allowance from B-1 kept after the condition that justified it ended.",
+      "recommendation": "none: one-off. Remove the allowance now, or log a follow-up. Relevant files: - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-exact-calculation/design.md - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-exact-calculation/tasks.md - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-exact-calculation/proposal.md - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-exact-calculation/specs/calculation/spec.md Not checked: the Jackson 3 and Boot 4.1.2 defaults in the L-3 table were judged from my own knowledge, not run against the build. The tests in task 4.2 are the real check. Risk: until B-4, a short operand like 1E+999999999 makes toPlainString() build a string about a billion characters long. That can crash the service (out of memory), so nothing should be deployed before B-4.",
+      "gate": "spec-reviewer",
+      "run": "toolu_017Fz6YJqT2bcUnGzQXYJwEG"
+    },
+    {
+      "id": "Q1",
+      "kind": "test-gap",
+      "severity": "low",
+      "rule": "docs/STANDARDS.md §6",
+      "where": "src/test/java/com/paulrule/mathapi/domain/*Test.java, application/PerformCalculationTest.java",
+      "status": "fixed-in-place",
+      "root_cause": "agent-instruction gap. The task order says \"failing test first\", but nothing asks for evidence that the test failed.",
+      "recommendation": "in tasks.md, each \"failing until X.Y\" step asks for the pasted red ./gradlew test --tests ... output before the implementing task → openspec/config.yaml tasks rule, or the profile's Task order.",
+      "gate": "qa",
+      "run": "toolu_01AEU8HoZjikAkhhGJNMiRcw"
+    },
+    {
+      "id": "Q2",
+      "kind": "test-gap",
+      "severity": "low",
+      "rule": "docs/PRD.md §3.2 (the about:blank bullet)",
+      "where": "src/test/java/com/paulrule/mathapi/adapter/in/web/CalculationControllerTest.java",
+      "status": "handed-back",
+      "root_cause": "spec delta gap. The R-7 requirement lists 404 but has no scenario for it.",
+      "recommendation": "when a PRD bullet names specific statuses, the spec delta needs one scenario per named status → profile Plan review checklist (STANDARDS §6 line).",
+      "gate": "qa",
+      "run": "toolu_01AEU8HoZjikAkhhGJNMiRcw"
+    },
+    {
+      "id": "Q3",
+      "kind": "standards-violation (in the plan, fixed during apply)",
+      "severity": "low",
+      "rule": "docs/STANDARDS.md §2",
+      "where": "openspec/changes/add-exact-calculation/design.md Decision 5",
+      "status": "fixed-in-place",
+      "root_cause": "missing or unclear standard. Nothing says that ArchUnit analyses test classes, so the plan put a config import in adapter-package test code.",
+      "recommendation": "add \"ArchUnit layer rules also apply to test classes; slice tests import application classes, never config\" → docs/STANDARDS.md §2 and the profile Plan review (spec-reviewer) §2 line. I did not check the Jackson defaults that no scenario pins (number coerced to the String operation, unknown properties ignored); design.md accepts them. The known 500 on huge Operands is deferred to B-4 by the backlog.",
+      "gate": "qa",
+      "run": "toolu_01AEU8HoZjikAkhhGJNMiRcw"
+    },
+    {
+      "id": "C1",
+      "kind": "test-gap",
+      "severity": "low",
+      "rule": "docs/STANDARDS.md §6 (a MockMvc test for every Problem Details path in the PRD)",
+      "where": "src/test/java/com/paulrule/mathapi/adapter/in/web/CalculationControllerTest.java (rejectsAnUnknownPath, last test)",
+      "status": "fixed-in-place",
+      "root_cause": "spec delta gap. The PRD bullet added in task 1.1 names 404, 405 and 415, but the R-7 requirement only has scenarios for 415 and 405. Tasks are written one test per scenario, so 404 had no task.",
+      "recommendation": "when a change adds or edits a PRD error bullet that lists example statuses, the spec delta should have one scenario per status it lists. Add this to the spec-reviewer's Plan review checklist under docs/STANDARDS.md §4 → .claude/sdlc-profile.md",
+      "gate": "senior-dev",
+      "run": "toolu_01NHZaDBvyKgNL9QoRbdt9xa"
+    },
+    {
+      "id": "C2",
+      "kind": "standards-violation",
+      "severity": "low",
+      "rule": null,
+      "where": "src/main/java/com/paulrule/mathapi/adapter/in/web/ApiExceptionHandler.java (handleMethodArgumentNotValid)",
+      "status": "waived",
+      "root_cause": "the spec delta does not say which field to name when several are missing.",
+      "recommendation": "none: one-off I did not check the Jackson defaults that no scenario pins (a number coerced to a String for operation, unknown properties ignored), as design.md planned. The only known risk is the huge-Operand 500, which was accepted at Gate 1 and stays open until B-4.",
+      "gate": "senior-dev",
+      "run": "toolu_01NHZaDBvyKgNL9QoRbdt9xa"
     }
   ],
   "fix_loops": [
@@ -301,6 +535,29 @@
         "cache_write": 8340,
         "cache_read": 252684,
         "output": 6432
+      }
+    },
+    {
+      "gate": "spec-reviewer",
+      "started_by": "toolu_017Fz6YJqT2bcUnGzQXYJwEG",
+      "findings": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "fix_runs": [
+        "toolu_01YKcrR2PRHfb9VEfJUDAYDL",
+        "toolu_01FCMsCSdpmzLVb8RU3rbvYB"
+      ],
+      "recheck_run": null,
+      "duration_s": 318.45399999999995,
+      "tool_calls": 30,
+      "tokens": {
+        "input": 110,
+        "cache_write": 134559,
+        "cache_read": 3240932,
+        "output": 61673
       }
     }
   ],
