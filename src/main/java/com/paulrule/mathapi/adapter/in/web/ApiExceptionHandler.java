@@ -1,5 +1,6 @@
 package com.paulrule.mathapi.adapter.in.web;
 
+import com.paulrule.mathapi.domain.DivisionByZeroException;
 import com.paulrule.mathapi.domain.UnknownOperationException;
 import java.net.URI;
 import org.jspecify.annotations.Nullable;
@@ -24,6 +25,7 @@ class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
     private static final URI INVALID_REQUEST = URI.create("/problems/invalid-request");
     private static final URI UNKNOWN_OPERATION = URI.create("/problems/unknown-operation");
+    private static final URI DIVISION_BY_ZERO = URI.create("/problems/division-by-zero");
     private static final URI ABOUT_BLANK = URI.create("about:blank");
 
     // Spring Framework 7 leaves ProblemDetail.type null, which omits it from the JSON; R-7 wants it explicit.
@@ -56,6 +58,14 @@ class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         var problem = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, ex.getMessage());
         problem.setType(UNKNOWN_OPERATION);
         problem.setTitle("Unknown operation");
+        return problem;
+    }
+
+    @ExceptionHandler(DivisionByZeroException.class)
+    ProblemDetail handleDivisionByZero(DivisionByZeroException ex) {
+        var problem = ProblemDetail.forStatusAndDetail(HttpStatus.UNPROCESSABLE_CONTENT, ex.getMessage());
+        problem.setType(DIVISION_BY_ZERO);
+        problem.setTitle("Division by zero");
         return problem;
     }
 

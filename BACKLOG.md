@@ -5,7 +5,7 @@
      Entries mirror the original math-api backlog one-for-one (see "Original item") so the two builds can be compared.
      Original item 5b (repo hygiene, from its v2 audit of its own code) has no entry. -->
 
-## MVP (2/5 built)
+## MVP (3/5 built)
 
 - [x] **B-1: Check the service is available** — built: [UC-001](use-cases/UC-001-check-service-availability.md), change add-service-availability
   - **Actor:** Client service
@@ -19,7 +19,7 @@
   - **Why here:** The core goal itself, for the Operations that need no rounding.
   - **Depends on:** B-1
   - **Original item:** 2 (`add-exact-arithmetic`)
-- [ ] **B-3: Divide two Operands**
+- [x] **B-3: Divide two Operands** — built: [UC-003](use-cases/UC-003-divide-two-operands.md), change add-divide-operation
   - **Actor:** Client service
   - **Goal:** Get the Result of a division, rounded per BR-3, or a rejection when dividing by zero (BR-2).
   - **Why here:** Completes the four basic Operations promised by v1.

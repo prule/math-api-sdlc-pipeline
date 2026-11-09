@@ -5,95 +5,95 @@
   "summary": "reports/sessions/47ef3287-b922-40a6-aa25-2e7585cba59d.summary.json",
   "claude_code": "2.1.317",
   "use_case": "UC-001",
-  "change": "add-service-availability",
+  "change": "add-divide-operation",
   "orchestrator": {
     "model": "claude-opus-5-5",
     "effort": "medium",
     "tokens": {
-      "input": 562,
-      "cache_write": 494185,
-      "cache_read": 33457050,
-      "output": 162554
+      "input": 766,
+      "cache_write": 613426,
+      "cache_read": 52976574,
+      "output": 231332
     }
   },
   "agents": {
     "architect": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 4,
-      "duration_s": 539.6,
-      "tool_calls": 32,
+      "runs": 6,
+      "duration_s": 826.0,
+      "tool_calls": 57,
       "tokens": {
-        "input": 110,
-        "cache_write": 282100,
-        "cache_read": 2754012,
-        "output": 118481
+        "input": 186,
+        "cache_write": 433149,
+        "cache_read": 5189381,
+        "output": 166119
       }
     },
     "junior-dev": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 2,
-      "duration_s": 477.1,
-      "tool_calls": 47,
+      "runs": 3,
+      "duration_s": 629.4,
+      "tool_calls": 66,
       "tokens": {
-        "input": 182,
-        "cache_write": 198365,
-        "cache_read": 4383533,
-        "output": 84224
+        "input": 264,
+        "cache_write": 330502,
+        "cache_read": 6509884,
+        "output": 115283
       }
     },
     "qa": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 2,
-      "duration_s": 284.7,
-      "tool_calls": 24,
+      "runs": 3,
+      "duration_s": 451.0,
+      "tool_calls": 42,
       "tokens": {
-        "input": 98,
-        "cache_write": 229225,
-        "cache_read": 2148576,
-        "output": 45395
+        "input": 164,
+        "cache_write": 366701,
+        "cache_read": 3693875,
+        "output": 70488
       }
     },
     "senior-dev": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 2,
-      "duration_s": 151.3,
-      "tool_calls": 19,
+      "runs": 3,
+      "duration_s": 204.8,
+      "tool_calls": 27,
       "tokens": {
-        "input": 58,
-        "cache_write": 136392,
-        "cache_read": 1047052,
-        "output": 23537
+        "input": 84,
+        "cache_write": 228768,
+        "cache_read": 1442511,
+        "output": 31738
       }
     },
     "spec-reviewer": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 2,
-      "duration_s": 147.7,
-      "tool_calls": 11,
+      "runs": 3,
+      "duration_s": 212.9,
+      "tool_calls": 19,
       "tokens": {
-        "input": 32,
-        "cache_write": 120061,
-        "cache_read": 266170,
-        "output": 26922
+        "input": 58,
+        "cache_write": 190030,
+        "cache_read": 592899,
+        "output": 38137
       }
     }
   },
   "time": {
-    "wall_s": 5632.0,
-    "agents_s": 1600.3,
-    "human_wait_s": 2289.4,
-    "orchestrator_s": 1742.3
+    "wall_s": 8396.2,
+    "agents_s": 2324.1,
+    "human_wait_s": 2381.8,
+    "orchestrator_s": 3690.3
   },
   "tokens": {
-    "input": 1042,
-    "cache_write": 1460328,
-    "cache_read": 44056393,
-    "output": 461113
+    "input": 1522,
+    "cache_write": 2162576,
+    "cache_read": 70405124,
+    "output": 653097
   },
   "runs": [
     {
@@ -343,6 +343,124 @@
         "C1",
         "C2"
       ]
+    },
+    {
+      "id": "toolu_01BiPtNBPY4jmQh8FtJHhS5s",
+      "agent": "architect",
+      "description": "Architect UC-003 plan",
+      "start": "2026-11-09T08:12:05.018000Z",
+      "duration_s": 268.3,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 23,
+      "tokens": {
+        "input": 70,
+        "cache_write": 147600,
+        "cache_read": 2236901,
+        "output": 46066
+      },
+      "verdict": null,
+      "verdict_source": null,
+      "findings": []
+    },
+    {
+      "id": "toolu_01ECfFQG69xSRx4VTEj9ew1k",
+      "agent": "spec-reviewer",
+      "description": "Spec review add-divide-operation",
+      "start": "2026-11-09T08:16:40.399000Z",
+      "duration_s": 65.1,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 8,
+      "tokens": {
+        "input": 26,
+        "cache_write": 69969,
+        "cache_read": 326729,
+        "output": 11215
+      },
+      "verdict": "handed-back",
+      "verdict_source": "findings",
+      "findings": [
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    {
+      "id": "toolu_013VKTYC2euvdKnQshrfpEnM",
+      "agent": "architect",
+      "description": "Gate 1 approved; fold in P1–P3",
+      "start": "2026-11-09T08:19:36.173000Z",
+      "duration_s": 18.2,
+      "resumed": true,
+      "linked_by": "resume",
+      "tool_calls": 2,
+      "tokens": {
+        "input": 6,
+        "cache_write": 3449,
+        "cache_read": 198468,
+        "output": 1572
+      },
+      "verdict": null,
+      "verdict_source": null,
+      "findings": []
+    },
+    {
+      "id": "toolu_01PmEqDnn8jsBrzBzosYPoPi",
+      "agent": "junior-dev",
+      "description": "Implement UC-003",
+      "start": "2026-11-09T08:20:02.669000Z",
+      "duration_s": 152.3,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 19,
+      "tokens": {
+        "input": 82,
+        "cache_write": 132137,
+        "cache_read": 2126351,
+        "output": 31059
+      },
+      "verdict": null,
+      "verdict_source": null,
+      "findings": []
+    },
+    {
+      "id": "toolu_01NQQdYR8s92gLzYTtByMtDS",
+      "agent": "qa",
+      "description": "QA verify add-divide-operation",
+      "start": "2026-11-09T08:22:43.575000Z",
+      "duration_s": 166.3,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 18,
+      "tokens": {
+        "input": 66,
+        "cache_write": 137476,
+        "cache_read": 1545299,
+        "output": 25093
+      },
+      "verdict": "clean",
+      "verdict_source": "findings",
+      "findings": []
+    },
+    {
+      "id": "toolu_01PN9524pgWi2FcpSgNqwDV4",
+      "agent": "senior-dev",
+      "description": "Code review add-divide-operation",
+      "start": "2026-11-09T08:25:36.378000Z",
+      "duration_s": 53.6,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 8,
+      "tokens": {
+        "input": 26,
+        "cache_write": 92376,
+        "cache_read": 395459,
+        "output": 8201
+      },
+      "verdict": "clean",
+      "verdict_source": "findings",
+      "findings": []
     }
   ],
   "findings": [
@@ -513,6 +631,42 @@
       "recommendation": "none: one-off I did not check the Jackson defaults that no scenario pins (a number coerced to a String for operation, unknown properties ignored), as design.md planned. The only known risk is the huge-Operand 500, which was accepted at Gate 1 and stays open until B-4.",
       "gate": "senior-dev",
       "run": "toolu_01NHZaDBvyKgNL9QoRbdt9xa"
+    },
+    {
+      "id": "P1",
+      "kind": "plan-defect",
+      "severity": "advisory",
+      "rule": null,
+      "where": "design.md § Design drift check",
+      "status": "handed-back",
+      "root_cause": "model slip (the task numbering changed after the drift text was written)",
+      "recommendation": "none: one-off",
+      "gate": "spec-reviewer",
+      "run": "toolu_01ECfFQG69xSRx4VTEj9ew1k"
+    },
+    {
+      "id": "P2",
+      "kind": "plan-defect",
+      "severity": "advisory",
+      "rule": null,
+      "where": "openspec/specs/calculation/spec.md § Purpose (not touched by the delta)",
+      "status": "handed-back",
+      "root_cause": "agent-instruction gap. Nothing tells the architect to check that the capability Purpose still holds when a change widens its behaviour.",
+      "recommendation": "add a tasks rule: \"If the change makes a capability's Purpose line untrue, add a task to correct it after archive\" → openspec/config.yaml (rules.tasks)",
+      "gate": "spec-reviewer",
+      "run": "toolu_01ECfFQG69xSRx4VTEj9ew1k"
+    },
+    {
+      "id": "P3",
+      "kind": "test-gap",
+      "severity": "advisory",
+      "rule": "docs/STANDARDS.md §6",
+      "where": "tasks.md § 3.1 Verify",
+      "status": "handed-back",
+      "root_cause": "plan omission (how an unhandled exception shows up in MockMvc is not spelled out)",
+      "recommendation": "none: one-off Relevant files: - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-divide-operation/design.md - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-divide-operation/tasks.md - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-divide-operation/specs/calculation/spec.md - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/specs/calculation/spec.md Not checked: I did not run jshell or Jackson myself, so the design's pre-checks and the open default rows are taken as stated. Risk for Gate 1: until B-4, a huge Operand still gives a 500, which breaks \"Every rejection is Problem Details without internals\". Gate 1 has to accept this again explicitly.",
+      "gate": "spec-reviewer",
+      "run": "toolu_01ECfFQG69xSRx4VTEj9ew1k"
     }
   ],
   "fix_loops": [
@@ -558,6 +712,28 @@
         "cache_write": 134559,
         "cache_read": 3240932,
         "output": 61673
+      }
+    },
+    {
+      "gate": "spec-reviewer",
+      "started_by": "toolu_01ECfFQG69xSRx4VTEj9ew1k",
+      "findings": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "fix_runs": [
+        "toolu_013VKTYC2euvdKnQshrfpEnM",
+        "toolu_01PmEqDnn8jsBrzBzosYPoPi"
+      ],
+      "recheck_run": null,
+      "duration_s": 170.522,
+      "tool_calls": 21,
+      "tokens": {
+        "input": 88,
+        "cache_write": 135586,
+        "cache_read": 2324819,
+        "output": 32631
       }
     }
   ],
