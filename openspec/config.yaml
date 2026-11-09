@@ -1,0 +1,17 @@
+schema: spec-driven
+
+context: |
+  Before writing any artifact, read docs/PRD.md, docs/DOMAIN-MODEL.md and docs/STANDARDS.md.
+  They are the source of truth for scope, domain terms and business rules (BR-n), and engineering standards.
+  Java 25, Spring Boot 4, Gradle Kotlin DSL; clean architecture in one module (domain / application / adapter.in.web / config), domain framework-free.
+  Stateless; BigDecimal only; errors are RFC 9457 Problem Details.
+
+rules:
+  proposal:
+    - State what is out of scope.
+    - List which of PRD.md, DOMAIN-MODEL.md, STANDARDS.md this change must update (or "none").
+  specs:
+    - Use the DOMAIN-MODEL.md glossary terms exactly and cite business rules by BR-n.
+  tasks:
+    - Order tasks test-first (write the failing test, then the code).
+    - Include a task to update each affected doc in docs/, including its change log.
