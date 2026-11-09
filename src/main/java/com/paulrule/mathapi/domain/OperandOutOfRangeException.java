@@ -4,8 +4,8 @@ package com.paulrule.mathapi.domain;
 public class OperandOutOfRangeException extends RuntimeException {
 
     public OperandOutOfRangeException(String operand) {
-        super(
-                "Operand " + operand
-                        + " is out of range: an Operand may have at most 100 significant digits and a scale from -1000 to 1000.");
+        super("Operand " + operand + " is out of range: an Operand may have at most "
+                + Calculation.MAX_SIGNIFICANT_DIGITS + " significant digits and a scale from -" + Calculation.MAX_SCALE
+                + " to " + Calculation.MAX_SCALE + ".");
     }
 }

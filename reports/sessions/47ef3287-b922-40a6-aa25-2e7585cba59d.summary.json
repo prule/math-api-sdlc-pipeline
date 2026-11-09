@@ -10,90 +10,90 @@
     "model": "claude-opus-5-5",
     "effort": "medium",
     "tokens": {
-      "input": 1022,
-      "cache_write": 779837,
-      "cache_read": 82058334,
-      "output": 302919
+      "input": 1214,
+      "cache_write": 2004197,
+      "cache_read": 107320380,
+      "output": 369985
     }
   },
   "agents": {
     "architect": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 10,
-      "duration_s": 1445.1,
-      "tool_calls": 93,
+      "runs": 12,
+      "duration_s": 1972.3,
+      "tool_calls": 123,
       "tokens": {
-        "input": 320,
-        "cache_write": 859474,
-        "cache_read": 10811589,
-        "output": 285999
+        "input": 434,
+        "cache_write": 1335223,
+        "cache_read": 14619684,
+        "output": 390102
       }
     },
     "junior-dev": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 5,
-      "duration_s": 881.8,
-      "tool_calls": 91,
+      "runs": 6,
+      "duration_s": 1220.3,
+      "tool_calls": 125,
       "tokens": {
-        "input": 372,
-        "cache_write": 507795,
-        "cache_read": 9662450,
-        "output": 170337
+        "input": 520,
+        "cache_write": 676835,
+        "cache_read": 14744643,
+        "output": 238175
       }
     },
     "qa": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 4,
-      "duration_s": 745.3,
-      "tool_calls": 70,
+      "runs": 5,
+      "duration_s": 1003.5,
+      "tool_calls": 85,
       "tokens": {
-        "input": 280,
-        "cache_write": 600431,
-        "cache_read": 7776173,
-        "output": 119659
+        "input": 352,
+        "cache_write": 773608,
+        "cache_read": 9533902,
+        "output": 154859
       }
     },
     "senior-dev": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 4,
-      "duration_s": 289.1,
-      "tool_calls": 37,
+      "runs": 5,
+      "duration_s": 376.3,
+      "tool_calls": 46,
       "tokens": {
-        "input": 116,
-        "cache_write": 315779,
-        "cache_read": 1999058,
-        "output": 47696
+        "input": 146,
+        "cache_write": 435685,
+        "cache_read": 2622117,
+        "output": 59602
       }
     },
     "spec-reviewer": {
       "model": "claude-opus-5-5",
       "effort": "medium",
-      "runs": 5,
-      "duration_s": 422.5,
-      "tool_calls": 35,
+      "runs": 6,
+      "duration_s": 541.3,
+      "tool_calls": 43,
       "tokens": {
-        "input": 122,
-        "cache_write": 312631,
-        "cache_read": 1777651,
-        "output": 77182
+        "input": 148,
+        "cache_write": 404997,
+        "cache_read": 2079133,
+        "output": 99590
       }
     }
   },
   "time": {
-    "wall_s": 12019.3,
-    "agents_s": 3783.8,
-    "human_wait_s": 4060.8,
-    "orchestrator_s": 4174.7
+    "wall_s": 18574.0,
+    "agents_s": 5113.6,
+    "human_wait_s": 4198.9,
+    "orchestrator_s": 9261.5
   },
   "tokens": {
-    "input": 2232,
-    "cache_write": 3375947,
-    "cache_read": 114085255,
-    "output": 1003792
+    "input": 2814,
+    "cache_write": 5630545,
+    "cache_read": 150919859,
+    "output": 1312313
   },
   "runs": [
     {
@@ -673,6 +673,132 @@
         "C3",
         "C4"
       ]
+    },
+    {
+      "id": "toolu_01Vk9F1aKYwXGTccWJimzwA7",
+      "agent": "architect",
+      "description": "Architect UC-005 plan",
+      "start": "2026-11-09T09:34:31.815000Z",
+      "duration_s": 459.6,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 25,
+      "tokens": {
+        "input": 92,
+        "cache_write": 222458,
+        "cache_read": 2953954,
+        "output": 91312
+      },
+      "verdict": null,
+      "verdict_source": null,
+      "findings": []
+    },
+    {
+      "id": "toolu_01Kfnjv3qZb3p2yhvTVkJV4V",
+      "agent": "spec-reviewer",
+      "description": "Spec review add-api-documentation",
+      "start": "2026-11-09T09:42:20.444000Z",
+      "duration_s": 118.8,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 8,
+      "tokens": {
+        "input": 26,
+        "cache_write": 92366,
+        "cache_read": 301482,
+        "output": 22408
+      },
+      "verdict": "handed-back",
+      "verdict_source": "findings",
+      "findings": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5"
+      ]
+    },
+    {
+      "id": "toolu_01VGJy6JDzj4ChoGswFeXwdj",
+      "agent": "architect",
+      "description": "Gate 1 approved; fold in A1–A5",
+      "start": "2026-11-09T11:01:31.121000Z",
+      "duration_s": 67.6,
+      "resumed": true,
+      "linked_by": "resume",
+      "tool_calls": 5,
+      "tokens": {
+        "input": 22,
+        "cache_write": 253291,
+        "cache_read": 854141,
+        "output": 12791
+      },
+      "verdict": null,
+      "verdict_source": null,
+      "findings": []
+    },
+    {
+      "id": "toolu_01UmMimfvcq9oEVegK9vHNKe",
+      "agent": "junior-dev",
+      "description": "Implement UC-005",
+      "start": "2026-11-09T11:02:48.245000Z",
+      "duration_s": 338.5,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 34,
+      "tokens": {
+        "input": 148,
+        "cache_write": 169040,
+        "cache_read": 5082193,
+        "output": 67838
+      },
+      "verdict": null,
+      "verdict_source": null,
+      "findings": []
+    },
+    {
+      "id": "toolu_01KTiAzDGXZWR214TN1ZkXDc",
+      "agent": "qa",
+      "description": "QA verify add-api-documentation",
+      "start": "2026-11-09T11:08:35.985000Z",
+      "duration_s": 258.2,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 15,
+      "tokens": {
+        "input": 72,
+        "cache_write": 173177,
+        "cache_read": 1757729,
+        "output": 35200
+      },
+      "verdict": "handed-back",
+      "verdict_source": "findings",
+      "findings": [
+        "Q1"
+      ]
+    },
+    {
+      "id": "toolu_0169JWXGtzNTvUTiV5mjRDwZ",
+      "agent": "senior-dev",
+      "description": "Code review add-api-documentation",
+      "start": "2026-11-09T11:13:04.793000Z",
+      "duration_s": 87.2,
+      "resumed": false,
+      "linked_by": "id",
+      "tool_calls": 9,
+      "tokens": {
+        "input": 30,
+        "cache_write": 119906,
+        "cache_read": 623059,
+        "output": 11906
+      },
+      "verdict": "fixed-in-place",
+      "verdict_source": "findings",
+      "findings": [
+        "C1",
+        "C2",
+        "C3"
+      ]
     }
   ],
   "findings": [
@@ -1095,6 +1221,114 @@
       "recommendation": "none: one-off. Revisit in B-5, when the OpenAPI examples have to generate these values anyway. I did not re-probe Jackson's size behaviour on decimal numbers (accepted at Gate 1), and I did not review POWER, MODULO, OpenAPI or arity (out of scope). Nothing was committed or pushed.",
       "gate": "senior-dev",
       "run": "toolu_015tvussD7PKoaR7hm9fYBcb"
+    },
+    {
+      "id": "P1",
+      "kind": "plan-defect",
+      "severity": "advisory",
+      "rule": "profile Implementation rules (docs stay current) / docs/STANDARDS.md §7",
+      "where": "tasks.md § 1.1",
+      "status": "handed-back",
+      "root_cause": "plan omission. The architect wrote the v1-current scope into the PRD, which is a target-state document.",
+      "recommendation": "add a rule that doc edits must stay true of the PRD's target state, not only the current build → openspec/config.yaml (rules.tasks)",
+      "gate": "spec-reviewer",
+      "run": "toolu_01Kfnjv3qZb3p2yhvTVkJV4V"
+    },
+    {
+      "id": "P2",
+      "kind": "test-gap",
+      "severity": "advisory",
+      "rule": "docs/STANDARDS.md §6 (test-first), ledger L-6",
+      "where": "tasks.md § 2.1",
+      "status": "handed-back",
+      "root_cause": "agent-instruction gap. L-6 asks for pasted red output but does not say a compile failure alone is not useful red.",
+      "recommendation": "extend L-6 so that the red output must come from assertions that ran; put trivial enabling edits before the failing-test task → openspec/config.yaml (rules.tasks)",
+      "gate": "spec-reviewer",
+      "run": "toolu_01Kfnjv3qZb3p2yhvTVkJV4V"
+    },
+    {
+      "id": "P3",
+      "kind": "plan-defect",
+      "severity": "advisory",
+      "rule": "docs/STANDARDS.md §8, ledger L-11",
+      "where": "tasks.md § Workflow follow-up",
+      "status": "handed-back",
+      "root_cause": "plan omission. The deferred prod toggle was checked against PRD §3.3 but not against STANDARDS §8's present-tense wording.",
+      "recommendation": "when a use case defers behaviour that a doc states in the present tense, list every doc that states it → openspec/config.yaml (rules.design)",
+      "gate": "spec-reviewer",
+      "run": "toolu_01Kfnjv3qZb3p2yhvTVkJV4V"
+    },
+    {
+      "id": "P4",
+      "kind": "plan-defect",
+      "severity": "advisory",
+      "rule": null,
+      "where": "tasks.md § 2.1 (request example)",
+      "status": "handed-back",
+      "root_cause": "model slip. Every other example has a name and location; this one does not.",
+      "recommendation": "none: one-off",
+      "gate": "spec-reviewer",
+      "run": "toolu_01Kfnjv3qZb3p2yhvTVkJV4V"
+    },
+    {
+      "id": "P5",
+      "kind": "plan-defect",
+      "severity": "advisory",
+      "rule": "docs/STANDARDS.md §4 (generated, never copied)",
+      "where": "design.md § Decision 4",
+      "status": "handed-back",
+      "root_cause": "plan omission. Making the BR-1 constants public was an easy chance to remove the literal duplicate in OperandOutOfRangeException.",
+      "recommendation": "none: one-off (fold into B-7 or a refactor) Key files: /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-api-documentation/{proposal.md,design.md,tasks.md,specs/api-documentation/spec.md} I did not run the Gradle build or repeat the architect's springdoc probes (D1–D12); I took them as recorded.",
+      "gate": "spec-reviewer",
+      "run": "toolu_01Kfnjv3qZb3p2yhvTVkJV4V"
+    },
+    {
+      "id": "Q1",
+      "kind": "code-defect",
+      "severity": "low",
+      "rule": null,
+      "where": "/home/paulrule.guest/projects/current/math-api-sdlc-pipeline/src/main/java/com/paulrule/mathapi/config/OpenApiConfig.java:39",
+      "status": "handed-back",
+      "root_cause": "spec delta gap. The requirement \"The limits and other errors are stated\" only checks that the description contains about:blank. Nobody checked the \"every other\" claim against a server error.",
+      "recommendation": "in design Decision 5, reword the description to \"every other client error (4xx) …\", or add a catch-all handler with its own test in a later change. Add to the use-case template a prompt to check claims about \"every other error\" against a 500 → openspec/changes/add-api-documentation/design.md (Decision 5) and the use-case template. --- Files: - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/src/main/java/com/paulrule/mathapi/config/OpenApiConfig.java - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/src/main/java/com/paulrule/mathapi/adapter/in/web/CalculationController.java - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/src/test/java/com/paulrule/mathapi/ApiDocumentationTest.java - Break-and-rerun script: /tmp/claude-501/-home-paulrule-guest-projects-current-math-api-sdlc-pipeline/47ef3287-b922-40a6-aa25-2e7585cba59d/scratchpad/mut.sh - Scratch copy: /tmp/claude-501/-home-paulrule-guest-projects-current-math-api-sdlc-pipeline/47ef3287-b922-40a6-aa25-2e7585cba59d/scratchpad/m Not checked: Swagger UI \"Try it out\" in a real browser (design row D11, upstream), and /v3/api-docs.yaml, which nothing relies on.",
+      "gate": "qa",
+      "run": "toolu_01KTiAzDGXZWR214TN1ZkXDc"
+    },
+    {
+      "id": "C1",
+      "kind": "code-defect",
+      "severity": "low",
+      "rule": "docs/STANDARDS.md §4 (the documentation must be correct)",
+      "where": "src/main/java/com/paulrule/mathapi/config/OpenApiConfig.java:38 (also specs/api-documentation/spec.md:113, proposal.md:14, design.md Decision 5)",
+      "status": "fixed-in-place",
+      "root_cause": "spec delta gap. The architect copied PRD §3.2's general \"every error response is Problem Details\" wording into the requirement and Decision 5. Nobody checked that claim against a 5xx path. The test checks only that about:blank appears, so it could not catch an overstatement.",
+      "recommendation": "add a rule to openspec/config.yaml (spec rules): \"a claim about *all* errors names the status class it covers, and the claim is probed against a 5xx as well as a 4xx\" → openspec/config.yaml",
+      "gate": "senior-dev",
+      "run": "toolu_0169JWXGtzNTvUTiV5mjRDwZ"
+    },
+    {
+      "id": "C2",
+      "kind": "standards-violation (doc accuracy)",
+      "severity": "low",
+      "rule": null,
+      "where": "docs/PRD.md:61-62 (§3.2: \"Every error response (including framework errors such as 415) is Problem Details\")",
+      "status": "outstanding",
+      "root_cause": "older text (UC-002) that this change did not add. It overstates the same way as C1, because an unhandled 500 is not Problem Details. I left it alone: the instruction was to align only text this change added, and fixing it means either changing the PRD contract or adding a 500 handler.",
+      "recommendation": "put a backlog item or the next PRD-touching change on it. It has to decide between narrowing §3.2 to \"client errors (4xx)\" and adding a catch-all 500 Problem Details handler → docs/PRD.md / BACKLOG.md",
+      "gate": "senior-dev",
+      "run": "toolu_0169JWXGtzNTvUTiV5mjRDwZ"
+    },
+    {
+      "id": "C3",
+      "kind": "test-gap",
+      "severity": "low",
+      "rule": "docs/STANDARDS.md §4",
+      "where": "OpenApiConfig.java:37,206 (\"16,384 bytes\", \"1,000 characters\")",
+      "status": "waived",
+      "root_cause": "the request limits live in application.yaml (spring.jackson.factory.constraints.read.*). The description copies them, and no test compares the description with the configured values.",
+      "recommendation": "extend STANDARDS §4 \"generated, never copied\" to cover documented values that come from configuration as well as the domain, or name this as an accepted limit → docs/STANDARDS.md",
+      "gate": "senior-dev",
+      "run": "toolu_0169JWXGtzNTvUTiV5mjRDwZ"
     }
   ],
   "fix_loops": [
@@ -1207,6 +1441,30 @@
         "cache_write": 332875,
         "cache_read": 4346099,
         "output": 61351
+      }
+    },
+    {
+      "gate": "spec-reviewer",
+      "started_by": "toolu_01Kfnjv3qZb3p2yhvTVkJV4V",
+      "findings": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5"
+      ],
+      "fix_runs": [
+        "toolu_01VGJy6JDzj4ChoGswFeXwdj",
+        "toolu_01UmMimfvcq9oEVegK9vHNKe"
+      ],
+      "recheck_run": null,
+      "duration_s": 406.137,
+      "tool_calls": 39,
+      "tokens": {
+        "input": 170,
+        "cache_write": 422331,
+        "cache_read": 5936334,
+        "output": 80629
       }
     }
   ],

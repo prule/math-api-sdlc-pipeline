@@ -135,94 +135,107 @@ details.inner > summary { cursor:pointer; color:var(--muted); font-size:12px; ma
 </style></head>
 <body><div class="wrap">
   <h1>UC-001 · add-divide-operation</h1>
-  <div class="sub">47ef3287-b922-40a6-aa25-2e7585cba59d.jsonl · 06:07:19 → 09:27:38 · generated 2026-11-09 20:27</div>
+  <div class="sub">47ef3287-b922-40a6-aa25-2e7585cba59d.jsonl · 06:07:19 → 11:16:53 · generated 2026-11-09 22:16</div>
   <div class="meta">HEAD · /home/paulrule.guest/projects/current/math-api-sdlc-pipeline · v2.1.317</div>
-  <div class="cards"><div class="card"><div class="card-val">3h 20m</div><div class="card-lbl">Wall time</div><div class="card-sub">agents 1h 3m · you 1h 7m · orchestrator 1h 9m</div></div>
-<div class="card"><div class="card-val">28</div><div class="card-lbl">Agent runs</div><div class="card-sub">8 resumed</div></div>
-<div class="card"><div class="card-val">5</div><div class="card-lbl">Fix loops</div><div class="card-sub">16m 3s of rework</div></div>
+  <div class="cards"><div class="card"><div class="card-val">5h 9m</div><div class="card-lbl">Wall time</div><div class="card-sub">agents 1h 25m · you 1h 9m · orchestrator 2h 34m</div></div>
+<div class="card"><div class="card-val">34</div><div class="card-lbl">Agent runs</div><div class="card-sub">9 resumed</div></div>
+<div class="card"><div class="card-val">6</div><div class="card-lbl">Fix loops</div><div class="card-sub">22m 50s of rework</div></div>
 <div class="card"><div class="card-val">14</div><div class="card-lbl">Findings</div><div class="card-sub">6 advisory · 8 low</div></div>
-<div class="card"><div class="card-val">1,003,792</div><div class="card-lbl">Output tokens</div><div class="card-sub">whole session, incl. subagents</div></div>
-<div class="card"><div class="card-val">117,463,434</div><div class="card-lbl">Input tokens</div><div class="card-sub">97% cache reads · 3,375,947 cache writes</div></div>
+<div class="card"><div class="card-val">1,312,313</div><div class="card-lbl">Output tokens</div><div class="card-sub">whole session, incl. subagents</div></div>
+<div class="card"><div class="card-val">156,553,218</div><div class="card-lbl">Input tokens</div><div class="card-sub">96% cache reads · 5,630,545 cache writes</div></div>
 <div class="card"><div class="card-val">3</div><div class="card-lbl">Errors</div><div class="card-sub">0 rejected tool calls</div></div></div>
   
-  <ul class="insights"><li class="ins good">qa caught something in 3/4 runs (8 findings).</li>
-<li class="ins good">senior-dev caught something in 3/4 runs (4 findings).</li>
-<li class="ins good">spec-reviewer caught something in 5/5 runs (16 findings).</li>
-<li class="ins info">spec-reviewer sent work back 5 time(s); the fixes and re-checks took 16m 3s, 93 tool calls and 184,957 output tokens.</li>
+  <ul class="insights"><li class="ins good">qa caught something in 4/5 runs (9 findings).</li>
+<li class="ins good">senior-dev caught something in 4/5 runs (5 findings).</li>
+<li class="ins good">spec-reviewer caught something in 6/6 runs (21 findings).</li>
+<li class="ins info">spec-reviewer sent work back 6 time(s); the fixes and re-checks took 22m 50s, 132 tool calls and 265,586 output tokens.</li>
 <li class="ins bad">3 command or tool errors, most in Bash (2).</li>
 <li class="ins info">Slowest run: architect &quot;Architect UC-004 plan&quot; at 7m 44s.</li></ul>
 
   <h2>Timeline</h2>
   <div class="note">idle gaps collapsed; bar widths are still proportional to real time</div>
   <div style="margin-bottom:10px"><span class="legend"><i style="background:#6366f1"></i>architect</span> <span class="legend"><i style="background:#ec4899"></i>junior-dev</span> <span class="legend"><i style="background:#14b8a6"></i>qa</span> <span class="legend"><i style="background:#f59e0b"></i>senior-dev</span> <span class="legend"><i style="background:#8b5cf6"></i>spec-reviewer</span> <span class="legend"><i class="human-key"></i>you</span> <span class="legend"><i class="loop-key"></i>fix loop</span></div>
-  <div class="panel"><div class="tl-row "><div class="tl-label" title="architect">architect</div><div class="tl-track"><div class="tl-bar ok" style="left:1.70%;width:2.05%;background:#6366f1" title="sdlc-pipeline:architect — Architect UC-001 plan
+  <div class="panel"><div class="tl-row "><div class="tl-label" title="architect">architect</div><div class="tl-track"><div class="tl-bar ok" style="left:1.43%;width:1.72%;background:#6366f1" title="sdlc-pipeline:architect — Architect UC-001 plan
 start 06:26:45 · 2m 47s
-11 tool calls · 40,039 output tokens"><span>Architect UC-001 plan</span></div><div class="tl-bar ok resumed" style="left:5.49%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Gate 1 approved; fold in P1–P3
+11 tool calls · 40,039 output tokens"><span>Architect UC-001 plan</span></div><div class="tl-bar ok resumed" style="left:4.62%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Gate 1 approved; fold in P1–P3
 start 06:32:11 · 28.9s · resumed
-2 tool calls · 6,432 output tokens"><span>Gate 1 approved; fold in P1–P3</span></div><div class="tl-bar ok" style="left:12.09%;width:3.60%;background:#6366f1" title="sdlc-pipeline:architect — Architect UC-002 plan
+2 tool calls · 6,432 output tokens"><span>Gate 1 approved; fold in P1–P3</span></div><div class="tl-bar ok" style="left:10.17%;width:3.03%;background:#6366f1" title="sdlc-pipeline:architect — Architect UC-002 plan
 start 06:49:07 · 4m 55s
-14 tool calls · 64,284 output tokens"><span>Architect UC-002 plan</span></div><div class="tl-bar ok resumed" style="left:18.31%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Gate 1 approved; fold in P1,P3,P4,P5
+14 tool calls · 64,284 output tokens"><span>Architect UC-002 plan</span></div><div class="tl-bar ok resumed" style="left:15.40%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Gate 1 approved; fold in P1,P3,P4,P5
 start 06:57:56 · 47.4s · resumed
-5 tool calls · 7,726 output tokens"><span>Gate 1 approved; fold in P1,P3,P4,P5</span></div><div class="tl-bar ok" style="left:49.72%;width:3.27%;background:#6366f1" title="sdlc-pipeline:architect — Architect UC-003 plan
+5 tool calls · 7,726 output tokens"><span>Gate 1 approved; fold in P1,P3,P4,P5</span></div><div class="tl-bar ok" style="left:41.83%;width:2.75%;background:#6366f1" title="sdlc-pipeline:architect — Architect UC-003 plan
 start 08:12:05 · 4m 28s
-23 tool calls · 46,066 output tokens"><span>Architect UC-003 plan</span></div><div class="tl-bar ok resumed" style="left:55.13%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Gate 1 approved; fold in P1–P3
+23 tool calls · 46,066 output tokens"><span>Architect UC-003 plan</span></div><div class="tl-bar ok resumed" style="left:46.37%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Gate 1 approved; fold in P1–P3
 start 08:19:36 · 18.2s · resumed
-2 tool calls · 1,572 output tokens"><span>Gate 1 approved; fold in P1–P3</span></div><div class="tl-bar ok" style="left:60.61%;width:5.66%;background:#6366f1" title="sdlc-pipeline:architect — Architect UC-004 plan
+2 tool calls · 1,572 output tokens"><span>Gate 1 approved; fold in P1–P3</span></div><div class="tl-bar ok" style="left:50.98%;width:4.76%;background:#6366f1" title="sdlc-pipeline:architect — Architect UC-004 plan
 start 08:32:30 · 7m 44s
-24 tool calls · 98,183 output tokens"><span>Architect UC-004 plan</span></div><div class="tl-bar ok resumed" style="left:68.55%;width:1.01%;background:#6366f1" title="sdlc-pipeline:architect — Spec review round 1: fix B-1..B-3
+24 tool calls · 98,183 output tokens"><span>Architect UC-004 plan</span></div><div class="tl-bar ok resumed" style="left:57.66%;width:0.85%;background:#6366f1" title="sdlc-pipeline:architect — Spec review round 1: fix B-1..B-3
 start 08:43:26 · 1m 23s · resumed
-5 tool calls · 15,400 output tokens"><span>Spec review round 1: fix B-1..B-3</span></div><div class="tl-bar ok resumed" style="left:80.72%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Gate 1 approved; fix P5, P6
+5 tool calls · 15,400 output tokens"><span>Spec review round 1: fix B-1..B-3</span></div><div class="tl-bar ok resumed" style="left:67.90%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Gate 1 approved; fix P5, P6
 start 09:00:17 · 33.8s · resumed
-3 tool calls · 2,305 output tokens"><span>Gate 1 approved; fix P5, P6</span></div><div class="tl-bar ok resumed" style="left:82.64%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Plan defect: 98765E+1000 is within BR-1
+3 tool calls · 2,305 output tokens"><span>Gate 1 approved; fix P5, P6</span></div><div class="tl-bar ok resumed" style="left:69.52%;width:0.60%;background:#6366f1" title="sdlc-pipeline:architect — Plan defect: 98765E+1000 is within BR-1
 start 09:03:01 · 37.9s · resumed
-4 tool calls · 3,992 output tokens"><span>Plan defect: 98765E+1000 is within BR-1</span></div></div></div>
-<div class="tl-row "><div class="tl-label" title="spec-reviewer">spec-reviewer</div><div class="tl-track"><div class="tl-bar caught" style="left:3.81%;width:0.71%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Spec review add-service-availability
+4 tool calls · 3,992 output tokens"><span>Plan defect: 98765E+1000 is within BR-1</span></div><div class="tl-bar ok" style="left:84.28%;width:4.71%;background:#6366f1" title="sdlc-pipeline:architect — Architect UC-005 plan
+start 09:34:31 · 7m 39s
+25 tool calls · 91,312 output tokens"><span>Architect UC-005 plan</span></div><div class="tl-bar ok resumed" style="left:90.88%;width:0.69%;background:#6366f1" title="sdlc-pipeline:architect — Gate 1 approved; fold in A1–A5
+start 11:01:31 · 1m 7s · resumed
+5 tool calls · 12,791 output tokens"><span>Gate 1 approved; fold in A1–A5</span></div></div></div>
+<div class="tl-row "><div class="tl-label" title="spec-reviewer">spec-reviewer</div><div class="tl-track"><div class="tl-bar caught" style="left:3.21%;width:0.60%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Spec review add-service-availability
 start 06:29:38 · 57.9s · handed-back
-5 tool calls · 10,301 output tokens"><span>Spec review add-service-availability</span></div><div class="tl-bar caught" style="left:15.79%;width:1.10%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Spec review add-exact-calculation
+5 tool calls · 10,301 output tokens"><span>Spec review add-service-availability</span></div><div class="tl-bar caught" style="left:13.28%;width:0.92%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Spec review add-exact-calculation
 start 06:54:11 · 1m 29s · handed-back
-6 tool calls · 16,621 output tokens"><span>Spec review add-exact-calculation</span></div><div class="tl-bar caught" style="left:53.08%;width:0.79%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Spec review add-divide-operation
+6 tool calls · 16,621 output tokens"><span>Spec review add-exact-calculation</span></div><div class="tl-bar caught" style="left:44.65%;width:0.67%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Spec review add-divide-operation
 start 08:16:40 · 1m 5s · handed-back
-8 tool calls · 11,215 output tokens"><span>Spec review add-divide-operation</span></div><div class="tl-bar caught" style="left:66.37%;width:2.08%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Spec review reject-operands-outside-limits
+8 tool calls · 11,215 output tokens"><span>Spec review add-divide-operation</span></div><div class="tl-bar caught" style="left:55.83%;width:1.75%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Spec review reject-operands-outside-limits
 start 08:40:23 · 2m 50s · handed-back
-13 tool calls · 31,575 output tokens"><span>Spec review reject-operands-outside-limits</span></div><div class="tl-bar caught resumed" style="left:69.63%;width:0.60%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Re-review after architect fixed B-1..B-3
+13 tool calls · 31,575 output tokens"><span>Spec review reject-operands-outside-limits</span></div><div class="tl-bar caught resumed" style="left:58.57%;width:0.60%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Re-review after architect fixed B-1..B-3
 start 08:44:55 · 39.0s · resumed · handed-back
-3 tool calls · 7,470 output tokens"><span>Re-review after architect fixed B-1..B-3</span></div></div></div>
-<div class="tl-row "><div class="tl-label" title="junior-dev">junior-dev</div><div class="tl-track"><div class="tl-bar ok" style="left:5.93%;width:2.51%;background:#ec4899" title="sdlc-pipeline:junior-dev — Implement UC-001
+3 tool calls · 7,470 output tokens"><span>Re-review after architect fixed B-1..B-3</span></div><div class="tl-bar caught" style="left:89.08%;width:1.22%;background:#8b5cf6" title="sdlc-pipeline:spec-reviewer — Spec review add-api-documentation
+start 09:42:20 · 1m 58s · handed-back
+8 tool calls · 22,408 output tokens"><span>Spec review add-api-documentation</span></div></div></div>
+<div class="tl-row "><div class="tl-label" title="junior-dev">junior-dev</div><div class="tl-track"><div class="tl-bar ok" style="left:4.99%;width:2.11%;background:#ec4899" title="sdlc-pipeline:junior-dev — Implement UC-001
 start 06:32:47 · 3m 26s
-22 tool calls · 30,277 output tokens"><span>Implement UC-001</span></div><div class="tl-bar ok" style="left:18.97%;width:3.31%;background:#ec4899" title="sdlc-pipeline:junior-dev — Implement UC-002
+22 tool calls · 30,277 output tokens"><span>Implement UC-001</span></div><div class="tl-bar ok" style="left:15.96%;width:2.78%;background:#ec4899" title="sdlc-pipeline:junior-dev — Implement UC-002
 start 06:58:51 · 4m 31s
-25 tool calls · 53,947 output tokens"><span>Implement UC-002</span></div><div class="tl-bar ok" style="left:55.45%;width:1.86%;background:#ec4899" title="sdlc-pipeline:junior-dev — Implement UC-003
+25 tool calls · 53,947 output tokens"><span>Implement UC-002</span></div><div class="tl-bar ok" style="left:46.64%;width:1.56%;background:#ec4899" title="sdlc-pipeline:junior-dev — Implement UC-003
 start 08:20:02 · 2m 32s
-19 tool calls · 31,059 output tokens"><span>Implement UC-003</span></div><div class="tl-bar ok" style="left:81.23%;width:1.31%;background:#ec4899" title="sdlc-pipeline:junior-dev — Implement UC-004
+19 tool calls · 31,059 output tokens"><span>Implement UC-003</span></div><div class="tl-bar ok" style="left:68.33%;width:1.10%;background:#ec4899" title="sdlc-pipeline:junior-dev — Implement UC-004
 start 09:01:02 · 1m 47s
-15 tool calls · 22,057 output tokens"><span>Implement UC-004</span></div><div class="tl-bar ok resumed" style="left:83.17%;width:1.77%;background:#ec4899" title="sdlc-pipeline:junior-dev — Plan fixed; resume from task 2.2
+15 tool calls · 22,057 output tokens"><span>Implement UC-004</span></div><div class="tl-bar ok resumed" style="left:69.97%;width:1.49%;background:#ec4899" title="sdlc-pipeline:junior-dev — Plan fixed; resume from task 2.2
 start 09:03:45 · 2m 25s · resumed
-10 tool calls · 32,997 output tokens"><span>Plan fixed; resume from task 2.2</span></div></div></div>
-<div class="tl-row "><div class="tl-label" title="qa">qa</div><div class="tl-track"><div class="tl-bar caught" style="left:8.54%;width:1.34%;background:#14b8a6" title="sdlc-pipeline:qa — QA verify add-service-availability
+10 tool calls · 32,997 output tokens"><span>Plan fixed; resume from task 2.2</span></div><div class="tl-bar ok" style="left:91.65%;width:3.47%;background:#ec4899" title="sdlc-pipeline:junior-dev — Implement UC-005
+start 11:02:48 · 5m 38s
+34 tool calls · 67,838 output tokens"><span>Implement UC-005</span></div></div></div>
+<div class="tl-row "><div class="tl-label" title="qa">qa</div><div class="tl-track"><div class="tl-bar caught" style="left:7.18%;width:1.13%;background:#14b8a6" title="sdlc-pipeline:qa — QA verify add-service-availability
 start 06:36:21 · 1m 49s · handed-back
-9 tool calls · 13,450 output tokens"><span>QA verify add-service-availability</span></div><div class="tl-bar caught" style="left:22.37%;width:2.13%;background:#14b8a6" title="sdlc-pipeline:qa — QA verify add-exact-calculation
+9 tool calls · 13,450 output tokens"><span>QA verify add-service-availability</span></div><div class="tl-bar caught" style="left:18.82%;width:1.79%;background:#14b8a6" title="sdlc-pipeline:qa — QA verify add-exact-calculation
 start 07:03:31 · 2m 54s · handed-back
-15 tool calls · 31,945 output tokens"><span>QA verify add-exact-calculation</span></div><div class="tl-bar ok" style="left:57.40%;width:2.03%;background:#14b8a6" title="sdlc-pipeline:qa — QA verify add-divide-operation
+15 tool calls · 31,945 output tokens"><span>QA verify add-exact-calculation</span></div><div class="tl-bar ok" style="left:48.29%;width:1.71%;background:#14b8a6" title="sdlc-pipeline:qa — QA verify add-divide-operation
 start 08:22:43 · 2m 46s · clean
-18 tool calls · 25,093 output tokens"><span>QA verify add-divide-operation</span></div><div class="tl-bar caught" style="left:85.27%;width:3.59%;background:#14b8a6" title="sdlc-pipeline:qa — QA verify reject-operands-outside-limits
+18 tool calls · 25,093 output tokens"><span>QA verify add-divide-operation</span></div><div class="tl-bar caught" style="left:71.73%;width:3.02%;background:#14b8a6" title="sdlc-pipeline:qa — QA verify reject-operands-outside-limits
 start 09:06:40 · 4m 54s · handed-back
-28 tool calls · 49,171 output tokens"><span>QA verify reject-operands-outside-limits</span></div></div></div>
-<div class="tl-row "><div class="tl-label" title="senior-dev">senior-dev</div><div class="tl-track"><div class="tl-bar caught" style="left:9.97%;width:0.62%;background:#f59e0b" title="sdlc-pipeline:senior-dev — Code review add-service-availability
+28 tool calls · 49,171 output tokens"><span>QA verify reject-operands-outside-limits</span></div><div class="tl-bar caught" style="left:95.21%;width:2.65%;background:#14b8a6" title="sdlc-pipeline:qa — QA verify add-api-documentation
+start 11:08:35 · 4m 18s · handed-back
+15 tool calls · 35,200 output tokens"><span>QA verify add-api-documentation</span></div></div></div>
+<div class="tl-row "><div class="tl-label" title="senior-dev">senior-dev</div><div class="tl-track"><div class="tl-bar caught" style="left:8.39%;width:0.60%;background:#f59e0b" title="sdlc-pipeline:senior-dev — Code review add-service-availability
 start 06:38:20 · 50.5s · fixed-in-place
-6 tool calls · 12,605 output tokens"><span>Code review add-service-availability</span></div><div class="tl-bar caught" style="left:24.60%;width:1.23%;background:#f59e0b" title="sdlc-pipeline:senior-dev — Code review add-exact-calculation
+6 tool calls · 12,605 output tokens"><span>Code review add-service-availability</span></div><div class="tl-bar caught" style="left:20.70%;width:1.03%;background:#f59e0b" title="sdlc-pipeline:senior-dev — Code review add-exact-calculation
 start 07:06:34 · 1m 40s · fixed-in-place
-13 tool calls · 10,932 output tokens"><span>Code review add-exact-calculation</span></div><div class="tl-bar ok" style="left:59.51%;width:0.65%;background:#f59e0b" title="sdlc-pipeline:senior-dev — Code review add-divide-operation
+13 tool calls · 10,932 output tokens"><span>Code review add-exact-calculation</span></div><div class="tl-bar ok" style="left:50.06%;width:0.60%;background:#f59e0b" title="sdlc-pipeline:senior-dev — Code review add-divide-operation
 start 08:25:36 · 53.6s · clean
-8 tool calls · 8,201 output tokens"><span>Code review add-divide-operation</span></div><div class="tl-bar caught" style="left:88.96%;width:1.03%;background:#f59e0b" title="sdlc-pipeline:senior-dev — Code review reject-operands-outside-limits
+8 tool calls · 8,201 output tokens"><span>Code review add-divide-operation</span></div><div class="tl-bar caught" style="left:74.83%;width:0.86%;background:#f59e0b" title="sdlc-pipeline:senior-dev — Code review reject-operands-outside-limits
 start 09:11:47 · 1m 24s · fixed-in-place
-10 tool calls · 15,958 output tokens"><span>Code review reject-operands-outside-limits</span></div></div></div>
-<div class="tl-row human-row"><div class="tl-label" title="you">you</div><div class="tl-track"><div class="tl-bar human" style="left:0.00%;width:0.60%" title="waiting on you · 451ms"><span>waiting</span></div><div class="tl-bar human" style="left:0.10%;width:0.60%" title="waiting on you · 162ms"><span>waiting</span></div><div class="tl-bar human" style="left:0.20%;width:1.31%" title="waiting on you · 1m 47s"><span>waiting</span></div><div class="tl-bar human" style="left:1.61%;width:0.60%" title="waiting on you · 20ms"><span>waiting</span></div><div class="tl-bar human" style="left:4.62%;width:0.77%" title="waiting on you · 1m 3s"><span>waiting</span></div><div class="tl-bar human" style="left:10.69%;width:1.01%" title="waiting on you · 1m 22s"><span>waiting</span></div><div class="tl-bar human" style="left:11.80%;width:0.60%" title="waiting on you · 19ms"><span>waiting</span></div><div class="tl-bar human" style="left:11.89%;width:0.60%" title="waiting on you · 61ms"><span>waiting</span></div><div class="tl-bar human" style="left:11.99%;width:0.60%" title="waiting on you · 23ms"><span>waiting</span></div><div class="tl-bar human" style="left:16.98%;width:1.23%" title="waiting on you · 1m 40s"><span>waiting</span></div><div class="tl-bar human" style="left:25.93%;width:23.59%" title="waiting on you · 32m 14s"><span>waiting</span></div><div class="tl-bar human" style="left:49.62%;width:0.60%" title="waiting on you · 58ms"><span>waiting</span></div><div class="tl-bar human" style="left:53.97%;width:1.07%" title="waiting on you · 1m 27s"><span>waiting</span></div><div class="tl-bar human" style="left:60.26%;width:0.60%" title="waiting on you · 4.3s"><span>waiting</span></div><div class="tl-bar human" style="left:60.41%;width:0.60%" title="waiting on you · 15ms"><span>waiting</span></div><div class="tl-bar human" style="left:60.51%;width:0.60%" title="waiting on you · 19ms"><span>waiting</span></div><div class="tl-bar human" style="left:70.20%;width:10.42%" title="waiting on you · 14m 14s"><span>waiting</span></div><div class="tl-bar human" style="left:85.04%;width:0.60%" title="waiting on you · 11.6s"><span>waiting</span></div><div class="tl-bar human" style="left:90.09%;width:9.91%" title="waiting on you · 13m 33s"><span>waiting</span></div></div></div>
-<div class="tl-row loop-row"><div class="tl-label" title="fix loops">fix loops</div><div class="tl-track"><div class="tl-bar loop" style="left:3.81%;width:2.03%" title="spec-reviewer fix loop · 1 fix run(s) · not re-checked
-28.9s · 2 tool calls · 6,432 output tokens"><span>spec-reviewer: P1, P2, P3</span></div><div class="tl-bar loop" style="left:15.79%;width:6.49%" title="spec-reviewer fix loop · 2 fix run(s) · not re-checked
-5m 18s · 30 tool calls · 61,673 output tokens"><span>spec-reviewer: P1, P2, P3, P4</span></div><div class="tl-bar loop" style="left:53.08%;width:4.23%" title="spec-reviewer fix loop · 2 fix run(s) · not re-checked
-2m 50s · 21 tool calls · 32,631 output tokens"><span>spec-reviewer: P1, P2, P3</span></div><div class="tl-bar loop" style="left:66.37%;width:3.74%" title="spec-reviewer fix loop · 1 fix run(s) · re-checked
-2m 1s · 8 tool calls · 22,870 output tokens"><span>spec-reviewer: P1, P2, P3, P4</span></div><div class="tl-bar loop" style="left:69.63%;width:15.31%" title="spec-reviewer fix loop · 4 fix run(s) · not re-checked
-5m 24s · 32 tool calls · 61,351 output tokens"><span>spec-reviewer: P5, P6</span></div></div></div></div>
+10 tool calls · 15,958 output tokens"><span>Code review reject-operands-outside-limits</span></div><div class="tl-bar caught" style="left:97.94%;width:0.89%;background:#f59e0b" title="sdlc-pipeline:senior-dev — Code review add-api-documentation
+start 11:13:04 · 1m 27s · fixed-in-place
+9 tool calls · 11,906 output tokens"><span>Code review add-api-documentation</span></div></div></div>
+<div class="tl-row human-row"><div class="tl-label" title="you">you</div><div class="tl-track"><div class="tl-bar human" style="left:0.00%;width:0.60%" title="waiting on you · 451ms"><span>waiting</span></div><div class="tl-bar human" style="left:0.09%;width:0.60%" title="waiting on you · 162ms"><span>waiting</span></div><div class="tl-bar human" style="left:0.17%;width:1.10%" title="waiting on you · 1m 47s"><span>waiting</span></div><div class="tl-bar human" style="left:1.35%;width:0.60%" title="waiting on you · 20ms"><span>waiting</span></div><div class="tl-bar human" style="left:3.88%;width:0.65%" title="waiting on you · 1m 3s"><span>waiting</span></div><div class="tl-bar human" style="left:8.99%;width:0.85%" title="waiting on you · 1m 22s"><span>waiting</span></div><div class="tl-bar human" style="left:9.92%;width:0.60%" title="waiting on you · 19ms"><span>waiting</span></div><div class="tl-bar human" style="left:10.01%;width:0.60%" title="waiting on you · 61ms"><span>waiting</span></div><div class="tl-bar human" style="left:10.09%;width:0.60%" title="waiting on you · 23ms"><span>waiting</span></div><div class="tl-bar human" style="left:14.29%;width:1.03%" title="waiting on you · 1m 40s"><span>waiting</span></div><div class="tl-bar human" style="left:21.81%;width:19.85%" title="waiting on you · 32m 14s"><span>waiting</span></div><div class="tl-bar human" style="left:41.74%;width:0.60%" title="waiting on you · 58ms"><span>waiting</span></div><div class="tl-bar human" style="left:45.40%;width:0.90%" title="waiting on you · 1m 27s"><span>waiting</span></div><div class="tl-bar human" style="left:50.69%;width:0.60%" title="waiting on you · 4.3s"><span>waiting</span></div><div class="tl-bar human" style="left:50.82%;width:0.60%" title="waiting on you · 15ms"><span>waiting</span></div><div class="tl-bar human" style="left:50.90%;width:0.60%" title="waiting on you · 19ms"><span>waiting</span></div><div class="tl-bar human" style="left:59.06%;width:8.77%" title="waiting on you · 14m 14s"><span>waiting</span></div><div class="tl-bar human" style="left:71.54%;width:0.60%" title="waiting on you · 11.6s"><span>waiting</span></div><div class="tl-bar human" style="left:75.78%;width:8.34%" title="waiting on you · 13m 33s"><span>waiting</span></div><div class="tl-bar human" style="left:84.20%;width:0.60%" title="waiting on you · 22ms"><span>waiting</span></div><div class="tl-bar human" style="left:90.38%;width:0.60%" title="waiting on you · 55ms"><span>waiting</span></div><div class="tl-bar human" style="left:90.46%;width:0.60%" title="waiting on you · 32.4s"><span>waiting</span></div><div class="tl-bar human" style="left:98.92%;width:1.08%" title="waiting on you · 1m 45s"><span>waiting</span></div></div></div>
+<div class="tl-row loop-row"><div class="tl-label" title="fix loops">fix loops</div><div class="tl-track"><div class="tl-bar loop" style="left:3.21%;width:1.70%" title="spec-reviewer fix loop · 1 fix run(s) · not re-checked
+28.9s · 2 tool calls · 6,432 output tokens"><span>spec-reviewer: P1, P2, P3</span></div><div class="tl-bar loop" style="left:13.28%;width:5.46%" title="spec-reviewer fix loop · 2 fix run(s) · not re-checked
+5m 18s · 30 tool calls · 61,673 output tokens"><span>spec-reviewer: P1, P2, P3, P4</span></div><div class="tl-bar loop" style="left:44.65%;width:3.56%" title="spec-reviewer fix loop · 2 fix run(s) · not re-checked
+2m 50s · 21 tool calls · 32,631 output tokens"><span>spec-reviewer: P1, P2, P3</span></div><div class="tl-bar loop" style="left:55.83%;width:3.15%" title="spec-reviewer fix loop · 1 fix run(s) · re-checked
+2m 1s · 8 tool calls · 22,870 output tokens"><span>spec-reviewer: P1, P2, P3, P4</span></div><div class="tl-bar loop" style="left:58.57%;width:12.88%" title="spec-reviewer fix loop · 4 fix run(s) · not re-checked
+5m 24s · 32 tool calls · 61,351 output tokens"><span>spec-reviewer: P5, P6</span></div><div class="tl-bar loop" style="left:89.08%;width:6.05%" title="spec-reviewer fix loop · 2 fix run(s) · not re-checked
+6m 46s · 39 tool calls · 80,629 output tokens"><span>spec-reviewer: P1, P2, P3, P4, P5</span></div></div></div></div>
 
   <h2>Findings</h2>
   <div class="panel"><h3>Gate runs</h3><table class="vtable">
@@ -305,7 +318,25 @@ start 09:11:47 · 1m 24s · fixed-in-place
           <td>Code review reject-operands-outside-limits</td>
           <td><span class="verdict caught">fixed-in-place</span></td>
           <td class="nw"><span class="muted">from findings</span></td><td class="num">4</td>
-          <td class="snip">Verdict: APPROVE</td></tr></tbody></table><h3>Findings</h3><p class="note">One row per finding; Status shows each gate run's verdict on it, in
+          <td class="snip">Verdict: APPROVE</td></tr><tr>
+          <td class="muted num">09:42:20</td>
+          <td><span class="agent-badge" style="background:#8b5cf6">spec-reviewer</span></td>
+          <td>Spec review add-api-documentation</td>
+          <td><span class="verdict caught">handed-back</span></td>
+          <td class="nw"><span class="muted">from findings</span></td><td class="num">5</td>
+          <td class="snip">Verdict: APPROVE.** I found nothing blocking. Below are five advisory items and my answers to your four questions.</td></tr><tr>
+          <td class="muted num">11:08:35</td>
+          <td><span class="agent-badge" style="background:#14b8a6">qa</span></td>
+          <td>QA verify add-api-documentation</td>
+          <td><span class="verdict caught">handed-back</span></td>
+          <td class="nw"><span class="muted">from findings</span></td><td class="num">1</td>
+          <td class="snip">QA verification: `add-api-documentation`. Verdict: READY TO ARCHIVE</td></tr><tr>
+          <td class="muted num">11:13:04</td>
+          <td><span class="agent-badge" style="background:#f59e0b">senior-dev</span></td>
+          <td>Code review add-api-documentation</td>
+          <td><span class="verdict caught">fixed-in-place</span></td>
+          <td class="nw"><span class="muted">from findings</span></td><td class="num">3</td>
+          <td class="snip">Verdict: APPROVE (after one fix, QA Q1)</td></tr></tbody></table><h3>Findings</h3><p class="note">One row per finding; Status shows each gate run's verdict on it, in
           order. Hover the root cause for where it was and what would prevent it.</p>
           <table class="vtable">
           <thead><tr><th>Id</th><th>Gate</th><th>Severity</th><th>Kind</th><th>Rule</th>
@@ -315,28 +346,28 @@ start 09:11:47 · 1m 24s · fixed-in-place
               <td><span class="pill ">advisory</span></td>
               <td>plan-defect</td>
               <td class="rule" title="">—</td>
-              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-by-rework</span></td>
+              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-by-rework</span> <span class="pill bad">handed-back</span></td>
               <td class="snip" title="proposal.md § Why, tasks.md § preamble
 none: one-off">model slip. The group numbers in the note were not updated after task groups were added or reordered (CI ended up as group 5, Verify as group 6).</td></tr><tr>
               <td><b>P2</b></td><td>spec-reviewer</td>
               <td><span class="pill ">advisory</span></td>
               <td>plan-defect</td>
               <td class="rule" title="docs/STANDARDS.md §2">docs/STANDARDS.md §2</td>
-              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-by-rework</span></td>
+              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-by-rework</span> <span class="pill bad">handed-back</span></td>
               <td class="snip" title="design.md § Decisions 5, tasks.md § 3.1–3.2
 none: one-off. B-1 is the only change that sets up ArchUnit.">plan omission. The fixture-outside-the-base-package approach silently depends on rules being written with relative package patterns, and the plan never says so.</td></tr><tr>
               <td><b>P3</b></td><td>spec-reviewer</td>
               <td><span class="pill ">advisory</span></td>
               <td>plan-defect</td>
               <td class="rule" title="docs/STANDARDS.md §1">docs/STANDARDS.md §1</td>
-              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-by-rework</span></td>
+              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-by-rework</span> <span class="pill bad">handed-back</span></td>
               <td class="snip" title="design.md § Decisions 6
 list the Boot 4 starter artifact names (main and test) in the STANDARDS.md §1 Stack table → docs/STANDARDS.md Artifacts reviewed (all under /home/paulrule.guest/projects/current/math-api-sdlc-pipeline): - openspec/changes/add-service-availability/proposal.md - openspec/changes/add-service-availability/design.md - openspec/changes/add-service-availability/specs/service-availability/spec.md - openspec/changes/add-service-availability/tasks.md - use-cases/UC-001-check-service-availability.md - docs/STANDARDS.md, docs/PRD.md, docs/DOMAIN-MODEL.md - .claude/sdlc-profile.md, openspec/config.yaml Not checked: I did not confirm against Boot 4.1.2 itself that management.health.readinessstate.enabled adds readiness to the main health check, or that the body is exactly {&quot;status&quot;:&quot;UP&quot;}. If either is wrong, test 4.1 will fail during implementation; it cannot pass silently. The CI workflow can only be checked by reading it until the first PR runs.">missing/unclear standard. STANDARDS §1 lists the test tools but not the Boot 4 test-starter artifacts.</td></tr><tr>
               <td><b>P4</b></td><td>spec-reviewer</td>
               <td><span class="pill ">advisory</span></td>
               <td>plan-defect</td>
               <td class="rule" title="docs/STANDARDS.md §2 (ArchUnit enforcement)">docs/STANDARDS.md §2 (ArchUni…</td>
-              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-by-rework</span></td>
+              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-by-rework</span> <span class="pill bad">handed-back</span></td>
               <td class="snip" title="design.md § Risks / Trade-offs
 none: one-off. Remove the allowance now, or log a follow-up. Relevant files: - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-exact-calculation/design.md - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-exact-calculation/tasks.md - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-exact-calculation/proposal.md - /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-exact-calculation/specs/calculation/spec.md Not checked: the Jackson 3 and Boot 4.1.2 defaults in the L-3 table were judged from my own knowledge, not run against the build. The tests in task 4.2 are the real check. Risk: until B-4, a short operand like 1E+999999999 makes toPlainString() build a string about a billion characters long. That can crash the service (out of memory), so nothing should be deployed before B-4.">plan omission. A temporary allowance from B-1 kept after the condition that justified it ended.</td></tr><tr>
               <td><b>P5</b></td><td>spec-reviewer</td>
@@ -357,7 +388,7 @@ none: one-off Files: - /home/paulrule.guest/projects/current/math-api-sdlc-pipel
               <td><span class="pill ">low</span></td>
               <td>standards-violation</td>
               <td class="rule" title="docs/STANDARDS.md §1 (new dependencies justified in the change)">docs/STANDARDS.md §1 (new dep…</td>
-              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-in-place</span></td>
+              <td class="trail"><span class="pill bad">handed-back</span> <span class="pill good">fixed-in-place</span> <span class="pill bad">handed-back</span></td>
               <td class="snip" title="openspec/changes/add-service-availability/design.md Decisions 2, 3 and 6; src/main/resources/application.yaml:7-10; build.gradle.kts:4,25
 add an agent rule that when the implementer departs from design.md for a framework or version reason, it updates design.md in the same run with opsx:update instead of only reporting it. Also add to the use-case template&#x27;s design Risks section a &quot;verify framework defaults at the pinned version&quot; entry. → .claude/agents/junior-dev.md and openspec/config.yaml (design rules) I did not check that the CI workflow runs on GitHub (I reviewed it by reading only), and I did not test readiness during a real startup or shutdown. The test simulates those with AvailabilityChangeEvent, as design.md Decision 4 intends. My config changes were made only in a scratch copy, which I deleted. I did not edit any project file.">spec delta gap. The design assumed Boot 3 defaults (probes only on Kubernetes) and that Gradle supplies the JUnit launcher. Boot 4.1.2 and Gradle 9 changed bot…</td></tr><tr>
               <td><b>Q2</b></td><td>qa</td>
@@ -392,14 +423,14 @@ add an implementation rule that any change from design.md or tasks.md (a new dep
               <td><span class="pill ">low</span></td>
               <td>standards-violation</td>
               <td class="rule" title="">—</td>
-              <td class="trail"><span class="pill warn">waived</span> <span class="pill good">fixed-in-place</span></td>
+              <td class="trail"><span class="pill warn">waived</span> <span class="pill good">fixed-in-place</span> <span class="pill warn">outstanding</span></td>
               <td class="snip" title="src/main/java/com/paulrule/mathapi/adapter/in/web/ApiExceptionHandler.java (handleMethodArgumentNotValid)
 none: one-off I did not check the Jackson defaults that no scenario pins (a number coerced to a String for operation, unknown properties ignored), as design.md planned. The only known risk is the huge-Operand 500, which was accepted at Gate 1 and stays open until B-4.">the spec delta does not say which field to name when several are missing.</td></tr><tr>
               <td><b>C3</b></td><td>senior-dev</td>
               <td><span class="pill ">low</span></td>
               <td>code-defect (documentation accuracy)</td>
               <td class="rule" title="">—</td>
-              <td class="trail"><span class="pill warn">outstanding</span></td>
+              <td class="trail"><span class="pill warn">outstanding</span> <span class="pill warn">waived</span></td>
               <td class="snip" title="docs/PRD.md:63 (&quot;A number that cannot be represented as a decimal at all (for example 1e2147483648)&quot;)
 at the next PRD touch, reword to &quot;a number the API cannot parse as a decimal (for example 1e2147483648)&quot;. I left it because it is Gate-approved, client-facing text and outside the two doc fixes you asked for → docs/PRD.md §3.2.">the same assumption as C2, carried into the PRD wording that task 1.1 dictated.</td></tr><tr>
               <td><b>C4</b></td><td>senior-dev</td>
@@ -426,7 +457,10 @@ none: one-off. Revisit in B-5, when the OpenAPI examples have to generate these 
           <td class="num">22,870</td></tr><tr><td>spec-reviewer</td><td>P5, P6</td>
           <td>Gate 1 approved; fix P5, P6, Implement UC-004, Plan defect: 98765E+1000 is within BR-1, Plan fixed; resume from task 2.2</td><td><span class="pill warn">not re-checked</span></td>
           <td class="num">5m 24s</td><td class="num">32</td>
-          <td class="num">61,351</td></tr></tbody></table></div>
+          <td class="num">61,351</td></tr><tr><td>spec-reviewer</td><td>P1, P2, P3, P4, P5</td>
+          <td>Gate 1 approved; fold in A1–A5, Implement UC-005</td><td><span class="pill warn">not re-checked</span></td>
+          <td class="num">6m 46s</td><td class="num">39</td>
+          <td class="num">80,629</td></tr></tbody></table></div>
 
   <h2>Agents</h2>
   <div class="panel"><p class="note">Tool calls, files and tokens are the work done inside each agent, summed across its runs; a resumed run is credited with its own work.</p><table class="vtable">
@@ -437,33 +471,33 @@ none: one-off. Revisit in B-5, when the OpenAPI examples have to generate these 
           <td><i class="dot" style="background:#6366f1"></i>architect</td>
           <td class="nw">opus-5-5</td>
           <td>medium</td>
-          <td class="num">10</td><td class="num">24m 5s</td>
-          <td class="num">2m 24s</td><td class="num">93</td><td class="num">89</td><td class="num muted">320</td><td class="num muted">859,474</td><td class="num muted">10,811,589</td><td class="num">285,999</td>
+          <td class="num">12</td><td class="num">32m 52s</td>
+          <td class="num">2m 44s</td><td class="num">123</td><td class="num">118</td><td class="num muted">434</td><td class="num muted">1,335,223</td><td class="num muted">14,619,684</td><td class="num">390,102</td>
           <td><span class="muted">producer</span></td><td class="num">0</td></tr><tr>
           <td><i class="dot" style="background:#ec4899"></i>junior-dev</td>
           <td class="nw">opus-5-5</td>
           <td>medium</td>
-          <td class="num">5</td><td class="num">14m 41s</td>
-          <td class="num">2m 56s</td><td class="num">91</td><td class="num">53</td><td class="num muted">372</td><td class="num muted">507,795</td><td class="num muted">9,662,450</td><td class="num">170,337</td>
+          <td class="num">6</td><td class="num">20m 20s</td>
+          <td class="num">3m 23s</td><td class="num">125</td><td class="num">71</td><td class="num muted">520</td><td class="num muted">676,835</td><td class="num muted">14,744,643</td><td class="num">238,175</td>
           <td><span class="muted">producer</span></td><td class="num">0</td></tr><tr>
           <td><i class="dot" style="background:#14b8a6"></i>qa <span class="gate-tag">gate</span></td>
           <td class="nw">opus-5-5</td>
           <td>medium</td>
-          <td class="num">4</td><td class="num">12m 25s</td>
-          <td class="num">3m 6s</td><td class="num">70</td><td class="num">53</td><td class="num muted">280</td><td class="num muted">600,431</td><td class="num muted">7,776,173</td><td class="num">119,659</td>
-          <td><span class="pill good">caught 3/4</span></td><td class="num">0</td></tr><tr>
+          <td class="num">5</td><td class="num">16m 43s</td>
+          <td class="num">3m 20s</td><td class="num">85</td><td class="num">69</td><td class="num muted">352</td><td class="num muted">773,608</td><td class="num muted">9,533,902</td><td class="num">154,859</td>
+          <td><span class="pill good">caught 4/5</span></td><td class="num">0</td></tr><tr>
           <td><i class="dot" style="background:#8b5cf6"></i>spec-reviewer <span class="gate-tag">gate</span></td>
           <td class="nw">opus-5-5</td>
           <td>medium</td>
-          <td class="num">5</td><td class="num">7m 2s</td>
-          <td class="num">1m 24s</td><td class="num">35</td><td class="num">43</td><td class="num muted">122</td><td class="num muted">312,631</td><td class="num muted">1,777,651</td><td class="num">77,182</td>
-          <td><span class="pill good">caught 5/5</span></td><td class="num">0</td></tr><tr>
+          <td class="num">6</td><td class="num">9m 1s</td>
+          <td class="num">1m 30s</td><td class="num">43</td><td class="num">60</td><td class="num muted">148</td><td class="num muted">404,997</td><td class="num muted">2,079,133</td><td class="num">99,590</td>
+          <td><span class="pill good">caught 6/6</span></td><td class="num">0</td></tr><tr>
           <td><i class="dot" style="background:#f59e0b"></i>senior-dev <span class="gate-tag">gate</span></td>
           <td class="nw">opus-5-5</td>
           <td>medium</td>
-          <td class="num">4</td><td class="num">4m 49s</td>
-          <td class="num">1m 12s</td><td class="num">37</td><td class="num">42</td><td class="num muted">116</td><td class="num muted">315,779</td><td class="num muted">1,999,058</td><td class="num">47,696</td>
-          <td><span class="pill good">caught 3/4</span></td><td class="num">0</td></tr></tbody></table>
+          <td class="num">5</td><td class="num">6m 16s</td>
+          <td class="num">1m 15s</td><td class="num">46</td><td class="num">54</td><td class="num muted">146</td><td class="num muted">435,685</td><td class="num muted">2,622,117</td><td class="num">59,602</td>
+          <td><span class="pill good">caught 4/5</span></td><td class="num">0</td></tr></tbody></table>
     <details class="inner"><summary>Every run</summary><table class="vtable compact">
       <thead><tr><th class="num">Start</th><th>Agent</th><th>Run</th><th class="num">Time</th>
       <th class="num">Tool calls</th><th class="num">Input</th><th class="num">Cache write</th>
@@ -664,6 +698,48 @@ none: one-off. Revisit in B-5, when the OpenAPI examples have to generate these 
           <td class="num">1m 24s</td><td class="num">10</td>
           <td class="num muted">32</td><td class="num muted">87,011</td>
           <td class="num muted">556,547</td><td class="num">15,958</td>
+          <td>fixed-in-place</td></tr><tr>
+          <td class="muted num">09:34:31</td>
+          <td><span class="agent-badge" style="background:#6366f1">architect</span></td>
+          <td>Architect UC-005 plan <span class="muted"></span></td>
+          <td class="num">7m 39s</td><td class="num">25</td>
+          <td class="num muted">92</td><td class="num muted">222,458</td>
+          <td class="num muted">2,953,954</td><td class="num">91,312</td>
+          <td></td></tr><tr>
+          <td class="muted num">09:42:20</td>
+          <td><span class="agent-badge" style="background:#8b5cf6">spec-reviewer</span></td>
+          <td>Spec review add-api-documentation <span class="muted"></span></td>
+          <td class="num">1m 58s</td><td class="num">8</td>
+          <td class="num muted">26</td><td class="num muted">92,366</td>
+          <td class="num muted">301,482</td><td class="num">22,408</td>
+          <td>handed-back</td></tr><tr>
+          <td class="muted num">11:01:31</td>
+          <td><span class="agent-badge" style="background:#6366f1">architect</span></td>
+          <td>Gate 1 approved; fold in A1–A5 <span class="muted">resumed</span></td>
+          <td class="num">1m 7s</td><td class="num">5</td>
+          <td class="num muted">22</td><td class="num muted">253,291</td>
+          <td class="num muted">854,141</td><td class="num">12,791</td>
+          <td></td></tr><tr>
+          <td class="muted num">11:02:48</td>
+          <td><span class="agent-badge" style="background:#ec4899">junior-dev</span></td>
+          <td>Implement UC-005 <span class="muted"></span></td>
+          <td class="num">5m 38s</td><td class="num">34</td>
+          <td class="num muted">148</td><td class="num muted">169,040</td>
+          <td class="num muted">5,082,193</td><td class="num">67,838</td>
+          <td></td></tr><tr>
+          <td class="muted num">11:08:35</td>
+          <td><span class="agent-badge" style="background:#14b8a6">qa</span></td>
+          <td>QA verify add-api-documentation <span class="muted"></span></td>
+          <td class="num">4m 18s</td><td class="num">15</td>
+          <td class="num muted">72</td><td class="num muted">173,177</td>
+          <td class="num muted">1,757,729</td><td class="num">35,200</td>
+          <td>handed-back</td></tr><tr>
+          <td class="muted num">11:13:04</td>
+          <td><span class="agent-badge" style="background:#f59e0b">senior-dev</span></td>
+          <td>Code review add-api-documentation <span class="muted"></span></td>
+          <td class="num">1m 27s</td><td class="num">9</td>
+          <td class="num muted">30</td><td class="num muted">119,906</td>
+          <td class="num muted">623,059</td><td class="num">11,906</td>
           <td>fixed-in-place</td></tr></tbody></table></details></div>
 
   <h2>Context — domain &amp; standards</h2>
@@ -713,127 +789,142 @@ drwxrwxr-x  2 paulrule paulrule …</div>
       <tbody><tr>
           <td>Bash</td>
           <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:100.0%"></div></div></td>
-          <td class="num">317</td>
-          <td class="num muted">13m 27s</td>
-          <td class="num"><span class="pill bad">8</span></td></tr><tr>
+          <td class="num">404</td>
+          <td class="num muted">17m 49s</td>
+          <td class="num"><span class="pill bad">10</span></td></tr><tr>
           <td>mcp__ccd_turn__update_plan</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:17.0%"></div></div></td>
-          <td class="num">54</td>
-          <td class="num muted">10.7s</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:16.3%"></div></div></td>
+          <td class="num">66</td>
+          <td class="num muted">14.8s</td>
           <td class="num">—</td></tr><tr>
           <td>Write</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:9.8%"></div></div></td>
-          <td class="num">31</td>
-          <td class="num muted">1m 1s</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:9.9%"></div></div></td>
+          <td class="num">40</td>
+          <td class="num muted">1m 10s</td>
           <td class="num">—</td></tr><tr>
           <td>SubagentHandback</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:8.8%"></div></div></td>
-          <td class="num">28</td>
-          <td class="num muted">4.9s</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:8.4%"></div></div></td>
+          <td class="num">34</td>
+          <td class="num muted">5.8s</td>
           <td class="num">—</td></tr><tr>
           <td>Agent</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:6.3%"></div></div></td>
-          <td class="num">20</td>
-          <td class="num muted">14.5s</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:6.2%"></div></div></td>
+          <td class="num">25</td>
+          <td class="num muted">2m 15s</td>
           <td class="num">—</td></tr><tr>
           <td>mcp__ccd_turn__wrap_up</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:5.4%"></div></div></td>
-          <td class="num">17</td>
-          <td class="num muted">1.6s</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:5.2%"></div></div></td>
+          <td class="num">21</td>
+          <td class="num muted">2.0s</td>
           <td class="num"><span class="pill bad">1</span></td></tr><tr>
           <td>Read</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:4.4%"></div></div></td>
-          <td class="num">14</td>
-          <td class="num muted">11.0s</td>
-          <td class="num">—</td></tr><tr>
-          <td>Skill</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:4.4%"></div></div></td>
-          <td class="num">14</td>
-          <td class="num muted">12.9s</td>
-          <td class="num">—</td></tr><tr>
-          <td>AskUserQuestion</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:3.2%"></div></div></td>
-          <td class="num">10</td>
-          <td class="num muted">1h 7m</td>
-          <td class="num">—</td></tr><tr>
-          <td>Edit</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:2.5%"></div></div></td>
-          <td class="num">8</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:4.2%"></div></div></td>
+          <td class="num">17</td>
           <td class="num muted">12.0s</td>
           <td class="num">—</td></tr><tr>
+          <td>Skill</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:4.2%"></div></div></td>
+          <td class="num">17</td>
+          <td class="num muted">15.0s</td>
+          <td class="num">—</td></tr><tr>
+          <td>AskUserQuestion</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:3.0%"></div></div></td>
+          <td class="num">12</td>
+          <td class="num muted">1h 9m</td>
+          <td class="num">—</td></tr><tr>
+          <td>Edit</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:2.2%"></div></div></td>
+          <td class="num">9</td>
+          <td class="num muted">12.2s</td>
+          <td class="num">—</td></tr><tr>
           <td>SendMessage</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:2.5%"></div></div></td>
-          <td class="num">8</td>
-          <td class="num muted">3.4s</td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:2.2%"></div></div></td>
+          <td class="num">9</td>
+          <td class="num muted">3.6s</td>
           <td class="num">—</td></tr><tr>
           <td>mcp__ccd_pr__get_status</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:0.9%"></div></div></td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:0.7%"></div></div></td>
           <td class="num">3</td>
           <td class="num muted">256ms</td>
           <td class="num">—</td></tr><tr>
           <td>ToolSearch</td>
-          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:0.6%"></div></div></td>
+          <td><div class="tool-bar-wrap"><div class="tool-bar" style="width:0.5%"></div></div></td>
           <td class="num">2</td>
           <td class="num muted">157ms</td>
           <td class="num">—</td></tr></tbody></table></div></details>
 
   <details class="diag"><summary><h2>Files touched</h2></summary>
-  <div class="panel"><p class="note">Includes tool calls and file access from inside every subagent transcript, not just the top-level session.</p><p class="note">99 files touched · 14 written fresh (no prior read) · counts incl. shell: 423 operations came from shell commands such as cat, sed, grep and redirects (common forms only). Claude Code's own files are left out.</p><table class="vtable">
+  <div class="panel"><p class="note">Includes tool calls and file access from inside every subagent transcript, not just the top-level session.</p><p class="note">121 files touched · 16 written fresh (no prior read) · counts incl. shell: 556 operations came from shell commands such as cat, sed, grep and redirects (common forms only). Claude Code's own files are left out.</p><table class="vtable">
       <thead><tr><th>File</th><th>Operations</th><th class="num">Total</th></tr></thead>
       <tbody><tr>
-          <td class="fpath">docs/PRD.md</td>
-          <td><span class="fop read">read ×28</span></td>
-          <td class="num muted">28</td></tr><tr>
-          <td class="fpath">openspec/specs/calculation/spec.md</td>
-          <td><span class="fop read">read ×24</span></td>
-          <td class="num muted">24</td></tr><tr>
           <td class="fpath">design.md</td>
-          <td><span class="fop read">read ×24</span></td>
-          <td class="num muted">24</td></tr><tr>
-          <td class="fpath">docs/DOMAIN-MODEL.md</td>
-          <td><span class="fop read">read ×23</span></td>
-          <td class="num muted">23</td></tr><tr>
-          <td class="fpath">CLAUDE.md</td>
-          <td><span class="fop write">write ×1</span> <span class="fop read">read ×21</span></td>
-          <td class="num muted">22</td></tr><tr>
+          <td><span class="fop write">write ×3</span> <span class="fop read">read ×36</span></td>
+          <td class="num muted">39</td></tr><tr>
+          <td class="fpath">docs/PRD.md</td>
+          <td><span class="fop read">read ×32</span></td>
+          <td class="num muted">32</td></tr><tr>
           <td class="fpath">tasks.md</td>
-          <td><span class="fop write">write ×1</span> <span class="fop read">read ×20</span></td>
-          <td class="num muted">21</td></tr><tr>
+          <td><span class="fop write">write ×3</span> <span class="fop read">read ×26</span></td>
+          <td class="num muted">29</td></tr><tr>
+          <td class="fpath">openspec/specs/calculation/spec.md</td>
+          <td><span class="fop read">read ×26</span></td>
+          <td class="num muted">26</td></tr><tr>
+          <td class="fpath">docs/DOMAIN-MODEL.md</td>
+          <td><span class="fop read">read ×26</span></td>
+          <td class="num muted">26</td></tr><tr>
+          <td class="fpath">CLAUDE.md</td>
+          <td><span class="fop write">write ×1</span> <span class="fop read">read ×24</span></td>
+          <td class="num muted">25</td></tr><tr>
           <td class="fpath">src/test/java/com/paulrule/mathapi/adapter/in/web/CalculationControllerTest.java</td>
-          <td><span class="fop write">write ×2</span> <span class="fop edit">edit ×2</span> <span class="fop read">read ×16</span></td>
-          <td class="num muted">20</td></tr><tr>
+          <td><span class="fop write">write ×2</span> <span class="fop edit">edit ×2</span> <span class="fop read">read ×19</span></td>
+          <td class="num muted">23</td></tr><tr>
+          <td class="fpath">build.gradle.kts</td>
+          <td><span class="fop write">write ×4</span> <span class="fop read">read ×17</span></td>
+          <td class="num muted">21</td></tr><tr>
           <td class="fpath">BACKLOG.md</td>
-          <td><span class="fop write">write ×1</span> <span class="fop edit">edit ×4</span> <span class="fop read">read ×11</span></td>
-          <td class="num muted">16</td></tr><tr>
+          <td><span class="fop write">write ×1</span> <span class="fop edit">edit ×5</span> <span class="fop read">read ×14</span></td>
+          <td class="num muted">20</td></tr><tr>
+          <td class="fpath">proposal.md</td>
+          <td><span class="fop write">write ×2</span> <span class="fop read">read ×13</span></td>
+          <td class="num muted">15</td></tr><tr>
           <td class="fpath">specs/calculation/spec.md</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×14</span></td>
           <td class="num muted">15</td></tr><tr>
           <td class="fpath">openspec/changes/add-divide-operation/tasks.md</td>
           <td><span class="fop write">write ×7</span> <span class="fop read">read ×6</span></td>
           <td class="num muted">13</td></tr><tr>
-          <td class="fpath">proposal.md</td>
-          <td><span class="fop write">write ×2</span> <span class="fop read">read ×11</span></td>
-          <td class="num muted">13</td></tr><tr>
-          <td class="fpath">build.gradle.kts</td>
+          <td class="fpath">openspec/config.yaml</td>
+          <td><span class="fop read">read ×12</span></td>
+          <td class="num muted">12</td></tr><tr>
+          <td class="fpath">src/main/java/com/paulrule/mathapi/domain/Calculation.java</td>
           <td><span class="fop write">write ×2</span> <span class="fop read">read ×10</span></td>
           <td class="num muted">12</td></tr><tr>
-          <td class="fpath">openspec/config.yaml</td>
-          <td><span class="fop read">read ×10</span></td>
-          <td class="num muted">10</td></tr><tr>
           <td class="fpath">src/main/resources/application.yaml</td>
-          <td><span class="fop write">write ×3</span> <span class="fop read">read ×6</span></td>
+          <td><span class="fop write">write ×3</span> <span class="fop read">read ×9</span></td>
+          <td class="num muted">12</td></tr><tr>
+          <td class="fpath">docs/STANDARDS.md</td>
+          <td><span class="fop read">read ×11</span></td>
+          <td class="num muted">11</td></tr><tr>
+          <td class="fpath">openspec/changes/add-api-documentation/tasks.md</td>
+          <td><span class="fop write">write ×7</span> <span class="fop read">read ×3</span></td>
+          <td class="num muted">10</td></tr><tr>
+          <td class="fpath">retrospectives/LEDGER.md</td>
+          <td><span class="fop read">read ×9</span></td>
+          <td class="num muted">9</td></tr><tr>
+          <td class="fpath">src/main/java/com/paulrule/mathapi/adapter/in/web/ApiExceptionHandler.java</td>
+          <td><span class="fop read">read ×9</span></td>
           <td class="num muted">9</td></tr><tr>
           <td class="fpath">orig.yaml</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×8</span></td>
           <td class="num muted">9</td></tr><tr>
-          <td class="fpath">docs/STANDARDS.md</td>
-          <td><span class="fop read">read ×8</span></td>
-          <td class="num muted">8</td></tr><tr>
-          <td class="fpath">retrospectives/LEDGER.md</td>
+          <td class="fpath">STANDARDS.md</td>
           <td><span class="fop read">read ×7</span></td>
           <td class="num muted">7</td></tr><tr>
-          <td class="fpath">src/main/java/com/paulrule/mathapi/domain/Calculation.java</td>
-          <td><span class="fop write">write ×1</span> <span class="fop read">read ×6</span></td>
+          <td class="fpath">src/main/java/com/paulrule/mathapi/domain/Operation.java</td>
+          <td><span class="fop write">write ×2</span> <span class="fop read">read ×5</span></td>
+          <td class="num muted">7</td></tr><tr>
+          <td class="fpath">src/test/java/com/paulrule/mathapi/ArchitectureTest.java</td>
+          <td><span class="fop write">write ×2</span> <span class="fop read">read ×5</span></td>
           <td class="num muted">7</td></tr><tr>
           <td class="fpath">openspec/changes/reject-operands-outside-limits/tasks.md</td>
           <td><span class="fop write">write ×2</span> <span class="fop read">read ×5</span></td>
@@ -841,25 +932,28 @@ drwxrwxr-x  2 paulrule paulrule …</div>
           <td class="fpath">P.java</td>
           <td><span class="fop write">write ×7</span></td>
           <td class="num muted">7</td></tr><tr>
-          <td class="fpath">src/main/java/com/paulrule/mathapi/domain/Operation.java</td>
-          <td><span class="fop write">write ×2</span> <span class="fop read">read ×4</span></td>
-          <td class="num muted">6</td></tr><tr>
-          <td class="fpath">src/test/java/com/paulrule/mathapi/ArchitectureTest.java</td>
-          <td><span class="fop write">write ×2</span> <span class="fop read">read ×4</span></td>
+          <td class="fpath">src/test</td>
+          <td><span class="fop read">read ×6</span></td>
           <td class="num muted">6</td></tr><tr>
           <td class="fpath">src/test/java/com/paulrule/mathapi/domain/CalculationTest.java</td>
           <td><span class="fop write">write ×1</span> <span class="fop edit">edit ×1</span> <span class="fop read">read ×4</span></td>
           <td class="num muted">6</td></tr><tr>
-          <td class="fpath">src/main/java/com/paulrule/mathapi/adapter/in/web/ApiExceptionHandler.java</td>
-          <td><span class="fop read">read ×6</span></td>
-          <td class="num muted">6</td></tr><tr>
+          <td class="fpath">PRD.md</td>
+          <td><span class="fop read">read ×5</span></td>
+          <td class="num muted">5</td></tr><tr>
           <td class="fpath">openspec/changes/add-divide-operation/specs/calculation/spec.md</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×4</span></td>
           <td class="num muted">5</td></tr><tr>
-          <td class="fpath">src/test</td>
-          <td><span class="fop read">read ×5</span></td>
+          <td class="fpath">src/main/java/com/paulrule/mathapi/domain/UnknownOperationException.java</td>
+          <td><span class="fop write">write ×1</span> <span class="fop read">read ×4</span></td>
           <td class="num muted">5</td></tr><tr>
           <td class="fpath">cp.txt</td>
+          <td><span class="fop write">write ×1</span> <span class="fop read">read ×4</span></td>
+          <td class="num muted">5</td></tr><tr>
+          <td class="fpath">src/test/java/com/paulrule/mathapi/MathApiApplicationTest.java</td>
+          <td><span class="fop write">write ×1</span> <span class="fop read">read ×4</span></td>
+          <td class="num muted">5</td></tr><tr>
+          <td class="fpath">settings.gradle.kts</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×4</span></td>
           <td class="num muted">5</td></tr><tr>
           <td class="fpath">openspec/changes/add-exact-calculation/tasks.md</td>
@@ -868,26 +962,41 @@ drwxrwxr-x  2 paulrule paulrule …</div>
           <td class="fpath">README.md</td>
           <td><span class="fop write">write ×1</span> <span class="fop edit">edit ×1</span> <span class="fop read">read ×2</span></td>
           <td class="num muted">4</td></tr><tr>
+          <td class="fpath">openspec/specs/service-availability/spec.md</td>
+          <td><span class="fop read">read ×4</span></td>
+          <td class="num muted">4</td></tr><tr>
           <td class="fpath">openspec/changes/add-exact-calculation/specs/calculation/spec.md</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×3</span></td>
           <td class="num muted">4</td></tr><tr>
           <td class="fpath">openspec/changes/reject-operands-outside-limits/specs/calculation/spec.md</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×3</span></td>
           <td class="num muted">4</td></tr><tr>
-          <td class="fpath">src/main/java/com/paulrule/mathapi/domain/UnknownOperationException.java</td>
-          <td><span class="fop write">write ×1</span> <span class="fop read">read ×3</span></td>
+          <td class="fpath">src/main/java/com/paulrule/mathapi/config/OpenApiConfig.java</td>
+          <td><span class="fop write">write ×2</span> <span class="fop read">read ×2</span></td>
           <td class="num muted">4</td></tr><tr>
-          <td class="fpath">src/test/java/com/paulrule/mathapi/MathApiApplicationTest.java</td>
+          <td class="fpath">src/main/java/com/paulrule/mathapi/domain/OperandOutOfRangeException.java</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×3</span></td>
           <td class="num muted">4</td></tr><tr>
           <td class="fpath">openspec/changes/reject-operands-outside-limits/design.md</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×3</span></td>
           <td class="num muted">4</td></tr><tr>
-          <td class="fpath">settings.gradle.kts</td>
-          <td><span class="fop write">write ×1</span> <span class="fop read">read ×3</span></td>
+          <td class="fpath">build/test-results/test/TEST-com.paulrule.mathapi.ApiDocumentationTest.xml</td>
+          <td><span class="fop read">read ×4</span></td>
           <td class="num muted">4</td></tr><tr>
-          <td class="fpath">openspec/specs/service-availability/spec.md</td>
+          <td class="fpath">use-cases/UC-005-explore-api-documentation.md</td>
+          <td><span class="fop write">write ×1</span> <span class="fop read">read ×2</span></td>
+          <td class="num muted">3</td></tr><tr>
+          <td class="fpath">openspec/changes/add-api-documentation/specs/api-documentation/spec.md</td>
+          <td><span class="fop write">write ×1</span> <span class="fop read">read ×2</span></td>
+          <td class="num muted">3</td></tr><tr>
+          <td class="fpath">openspec/specs/api-documentation/spec.md</td>
           <td><span class="fop read">read ×3</span></td>
+          <td class="num muted">3</td></tr><tr>
+          <td class="fpath">src/main/java/com/paulrule/mathapi/adapter/in/web/CalculationController.java</td>
+          <td><span class="fop write">write ×1</span> <span class="fop read">read ×2</span></td>
+          <td class="num muted">3</td></tr><tr>
+          <td class="fpath">src/test/java/com/paulrule/mathapi/ApiDocumentationTest.java</td>
+          <td><span class="fop write">write ×1</span> <span class="fop read">read ×2</span></td>
           <td class="num muted">3</td></tr><tr>
           <td class="fpath">src/main/java/com/paulrule/mathapi/MathApiApplication.java</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×2</span></td>
@@ -895,16 +1004,13 @@ drwxrwxr-x  2 paulrule paulrule …</div>
           <td class="fpath">openspec/changes/add-divide-operation/design.md</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×2</span></td>
           <td class="num muted">3</td></tr><tr>
+          <td class="fpath">openspec/changes/add-api-documentation/design.md</td>
+          <td><span class="fop write">write ×1</span> <span class="fop read">read ×2</span></td>
+          <td class="num muted">3</td></tr><tr>
           <td class="fpath">openspec/changes/add-service-availability/tasks.md</td>
           <td><span class="fop write">write ×2</span> <span class="fop read">read ×1</span></td>
           <td class="num muted">3</td></tr><tr>
-          <td class="fpath">PRD.md</td>
-          <td><span class="fop read">read ×2</span></td>
-          <td class="num muted">2</td></tr><tr>
           <td class="fpath">DOMAIN-MODEL.md</td>
-          <td><span class="fop read">read ×2</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">STANDARDS.md</td>
           <td><span class="fop read">read ×2</span></td>
           <td class="num muted">2</td></tr><tr>
           <td class="fpath">skills/build-use-case/SKILL.md</td>
@@ -928,39 +1034,9 @@ drwxrwxr-x  2 paulrule paulrule …</div>
           <td class="fpath">use-cases/UC-004-reject-operands-outside-limits.md</td>
           <td><span class="fop write">write ×1</span> <span class="fop read">read ×1</span></td>
           <td class="num muted">2</td></tr><tr>
-          <td class="fpath">Probe2.java</td>
-          <td><span class="fop write">write ×2</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">src/test/java/com/paulrule/mathapi/application/PerformCalculationTest.java</td>
-          <td><span class="fop write">write ×1</span> <span class="fop read">read ×1</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">gradle/wrapper/gradle-wrapper.properties</td>
+          <td class="fpath">specs/api-documentation/spec.md</td>
           <td><span class="fop read">read ×2</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">src/main/java/com/paulrule/mathapi/domain/DivisionByZeroException.java</td>
-          <td><span class="fop read">read ×2</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">src/test/java</td>
-          <td><span class="fop read">read ×2</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">openspec/changes/add-divide-operation/proposal.md</td>
-          <td><span class="fop write">write ×1</span> <span class="fop read">read ×1</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">openspec/changes/add-exact-calculation/design.md</td>
-          <td><span class="fop write">write ×1</span> <span class="fop read">read ×1</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">src/main/java/com/paulrule/mathapi/domain/OperandOutOfRangeException.java</td>
-          <td><span class="fop read">read ×2</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">openspec/changes/archive/2026-11-09-add-service-availability/design.md</td>
-          <td><span class="fop read">read ×2</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">openspec/changes/archive/2026-11-09-add-service-availability/tasks.md</td>
-          <td><span class="fop read">read ×2</span></td>
-          <td class="num muted">2</td></tr><tr>
-          <td class="fpath">openspec/changes/add-service-availability/design.md</td>
-          <td><span class="fop write">write ×1</span> <span class="fop read">read ×1</span></td>
-          <td class="num muted">2</td></tr></tbody></table><p class="note">…and 39 more files.</p></div></details>
+          <td class="num muted">2</td></tr></tbody></table><p class="note">…and 61 more files.</p></div></details>
 
   <details class="diag"><summary><h2>Activity feed</h2></summary>
   <div class="filters">
@@ -2560,9 +2636,330 @@ I reviewed the working-tree diff for `reject-operands-outside-limits` against th
       <div class="feed-text">The calculation spec now validates with 15 requirements and the change is archived as 2026-11-09-reject-operands-outside-limits. I&#x27;m ticking B-4 and writing the retrospective next.</div></div></div>
 <div class="feed tool"><div class="feed-time">09:27:38</div>
       <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
-      <span class="dur">—</span></div>
+      <span class="dur">2.0s</span></div>
       <div class="feed-text mono">python3 - &lt;&lt;&#x27;EOF&#x27; p=&quot;BACKLOG.md&quot;; s=open(p).read() old=&quot;- [ ] **B-4: Reject Operands outside the limits** — written: [UC-004](use-cases/UC-004-reject-operands-outside-limits.md)&quot; new=&quot;- [x] **B-4: Re…</div></div></div>
 <div class="feed tool"><div class="feed-time">09:27:38</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">1.8s</span></div>
+      <div class="feed-text mono">{&quot;advance&quot;: true}</div></div></div>
+<div class="feed tool"><div class="feed-time">09:28:19</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Write</span>
+      <span class="dur">6.5s</span></div>
+      <div class="feed-text mono">/home/paulrule.guest/projects/current/math-api-sdlc-pipeline/retrospectives/2026-11-09-reject-operands-outside-limits.md</div></div></div>
+<div class="feed tool"><div class="feed-time">09:28:25</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
+      <span class="dur">378ms</span></div>
+      <div class="feed-text mono">python3 - &lt;&lt;&#x27;EOF&#x27; p=&quot;retrospectives/LEDGER.md&quot;; s=open(p).read() reps=[(&quot;`.claude/sdlc-profile.md`; plugin `agents/junior-dev.md` | 1 | open |&quot;,&quot;`.claude/sdlc-profile.md`; plugin `agents/junior-dev.m…</div></div></div>
+<div class="feed thinking"><div class="feed-time">09:28:30</div>
+      <div class="feed-body"><div class="feed-who">Thinking</div>
+      <div class="feed-text">The retrospective is saved at retrospectives/2026-11-09-reject-operands-outside-limits.md, recording 3 failed reviews, 3 standards violations and 7 recommendations, with 2 ledger items counted and 5 new.</div></div></div>
+<div class="feed tool"><div class="feed-time">09:28:31</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__wrap_up</span>
+      <span class="dur">73ms</span></div>
+      <div class="feed-text mono">{&quot;recap&quot;: &quot;B-4 (operand limits) is built and archived, with 137 passing tests, and it closes the huge-Operand 500. B-4 is ticked, and the retrospective and ledger (L-1 and L-3 now at 2 records) are wr</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:28:40</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">B-4 (UC-004) went through the whole pipeline and is archived. `./gradlew clean build` passes with 137 tests. Nothing is committed yet; all the changes are on the `feat/uc-4-reject-operands-outside-limits` branch.
+
+**What was built:**
+- **BR-1 in the domain:** the `Calculation` constructor checks at most 100 significant digits and a scale within ±1000, `a` before `b`. A breach returns `400 /problems/operand-out-of-range`, naming the Operand but never its value.
+- **Size limits, configuration only:** a 16,384-byte body and 1,000-character values, set through three Jackson limits in `application…</div></div></div>
+<div class="feed user"><div class="feed-time">09:29:45</div>
+      <div class="feed-body"><div class="feed-who">You</div>
+      <div class="feed-text">Commit and open PR</div></div></div>
+<div class="feed tool"><div class="feed-time">09:29:48</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">104ms</span></div>
+      <div class="feed-text mono">{&quot;items&quot;: [{&quot;content&quot;: &quot;Commit B-4 and push&quot;, &quot;status&quot;: &quot;in_progress&quot;}, {&quot;content&quot;: &quot;Open the PR&quot;, &quot;status&quot;: &quot;pending&quot;}], &quot;scope&quot;: &quot;continuation&quot;}</div></div></div>
+<div class="feed tool"><div class="feed-time">09:29:52</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
+      <span class="dur">7.6s</span></div>
+      <div class="feed-text mono">git add -A &amp;&amp; git commit -q -F - &lt;&lt;&#x27;EOF&#x27; feat: enforce BR-1 operand limits and bound JSON request parsing (UC-004)  The Calculation constructor rejects an Operand with more than 100 significant digit…</div></div></div>
+<div class="feed tool"><div class="feed-time">09:30:02</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">90ms</span></div>
+      <div class="feed-text mono">{&quot;advance&quot;: true}</div></div></div>
+<div class="feed tool"><div class="feed-time">09:30:14</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Write</span>
+      <span class="dur">94ms</span></div>
+      <div class="feed-text mono">/tmp/claude-501/-home-paulrule-guest-projects-current-math-api-sdlc-pipeline/47ef3287-b922-40a6-aa25-2e7585cba59d/scratchpad/pr-body-b4.md</div></div></div>
+<div class="feed tool"><div class="feed-time">09:30:16</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
+      <span class="dur">4.4s</span></div>
+      <div class="feed-text mono">gh pr create --base main --head feat/uc-4-reject-operands-outside-limits --title &quot;feat: enforce BR-1 operand limits and bound JSON request parsing (UC-004)&quot; --body-file /tmp/claude-501/-home-paulrule…</div></div></div>
+<div class="feed tool"><div class="feed-time">09:30:23</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__wrap_up</span>
+      <span class="dur">96ms</span></div>
+      <div class="feed-text mono">{&quot;recap&quot;: &quot;B-4 is committed as 6c701d4 and PR #5 is open against main. Its CI build check hadn&#x27;t reported when it was opened, so merge only once it passes.&quot;}</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:30:31</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">I committed B-4 as `6c701d4` and opened [prule/math-api-sdlc-pipeline#5](https://github.com/prule/math-api-sdlc-pipeline/pull/5) against `main`.
+
+- **Commit:** 21 files. That&#x27;s the BR-1 check and `OperandOutOfRangeException`, the handler, the three Jackson limits, the tests, the PRD and DOMAIN-MODEL edits, the archived OpenSpec change, `BACKLOG.md`, the retrospective, `LEDGER.md` and the session report.
+- **PR body:**
+  - a sketch of the order in which a request is checked;
+  - the configuration settings;
+  - a before/after for `1e999999999 × 1e999999999`;
+  - the boundary tests;
+  - QA&#x27;s evi…</div></div></div>
+<div class="feed user"><div class="feed-time">09:32:02</div>
+      <div class="feed-body"><div class="feed-who">You</div>
+      <div class="feed-text">merge</div></div></div>
+<div class="feed tool"><div class="feed-time">09:32:05</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">95ms</span></div>
+      <div class="feed-text mono">{&quot;items&quot;: [{&quot;content&quot;: &quot;Check CI on PR #5&quot;, &quot;status&quot;: &quot;in_progress&quot;}, {&quot;content&quot;: &quot;Squash-merge and pull main&quot;, &quot;status&quot;: &quot;pending&quot;}], &quot;scope&quot;: &quot;continuation&quot;}</div></div></div>
+<div class="feed tool"><div class="feed-time">09:32:06</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
+      <span class="dur">1.7s</span></div>
+      <div class="feed-text mono">gh pr checks 5 2&gt;&amp;1</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:32:11</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">CI `build` passed (23s). Merging now.</div></div></div>
+<div class="feed tool"><div class="feed-time">09:32:11</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">91ms</span></div>
+      <div class="feed-text mono">{&quot;advance&quot;: true}</div></div></div>
+<div class="feed tool"><div class="feed-time">09:32:12</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
+      <span class="dur">17.8s</span></div>
+      <div class="feed-text mono">gh pr merge 5 --squash --delete-branch 2&gt;&amp;1 | tail -1; git switch -q main; git pull -q --prune; git branch -a | cat; git log --oneline -2 | cat; git status --short</div></div></div>
+<div class="feed tool"><div class="feed-time">09:32:33</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__wrap_up</span>
+      <span class="dur">109ms</span></div>
+      <div class="feed-text mono">{&quot;recap&quot;: &quot;PR #5 is squash-merged after CI passed, its branch is deleted, and local main is at dfcd106 and clean. B-1 to B-4 are done; B-5 (API documentation) is the last MVP entry.&quot;}</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:32:42</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">I merged [prule/math-api-sdlc-pipeline#5](https://github.com/prule/math-api-sdlc-pipeline/pull/5) as a single squashed commit after its CI `build` check passed in 23s. The branch is deleted, and your local `main` is at `dfcd106` with no uncommitted changes.
+
+That makes 4 of the 5 MVP entries built. B-5, API documentation, is the last:
+```bash
+/sdlc-pipeline:write-use-case next
+```
+
+This session&#x27;s log already holds four pipeline runs. Starting B-5 in a fresh session would keep its session report to B-5 alone.</div></div></div>
+<div class="feed user"><div class="feed-time">09:32:52</div>
+      <div class="feed-body"><div class="feed-who">You</div>
+      <div class="feed-text">Base directory for this skill: /home/paulrule.guest/.claude/plugins/cache/sdlc-pipeline/sdlc-pipeline/0.9.0/skills/write-use-case
+
+Help the user author a **business use case**. A use case describes **behaviour** end-to-end and stays
+at the **business level**: NO implementation (no protocols, endpoints, status codes, data formats,
+screens, databases, frameworks or classes — all of that is the architect&#x27;s job downstream). Idea from
+the user:
+
+next
+
+## Steps
+
+1. **Load context.** Read `.claude/sdlc-profile.md` for the domain and use-case paths (defaults
+   `domain/` and `use-cases/`; if the prof…</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:33:01</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">Next entry is **B-5: Explore the API from its documentation**. PRD §3.3 and the STANDARDS §4 rules on documenting endpoints settle it, so there&#x27;s no interview. I&#x27;ll call out the one scope call I made.</div></div></div>
+<div class="feed tool"><div class="feed-time">09:33:02</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">75ms</span></div>
+      <div class="feed-text mono">{&quot;items&quot;: [{&quot;content&quot;: &quot;Draft and save UC-005&quot;, &quot;status&quot;: &quot;in_progress&quot;}, {&quot;content&quot;: &quot;Link UC-005 in BACKLOG.md&quot;, &quot;status&quot;: &quot;pending&quot;}], &quot;scope&quot;: &quot;continuation&quot;}</div></div></div>
+<div class="feed tool"><div class="feed-time">09:33:14</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Write</span>
+      <span class="dur">1.3s</span></div>
+      <div class="feed-text mono">/home/paulrule.guest/projects/current/math-api-sdlc-pipeline/use-cases/UC-005-explore-api-documentation.md</div></div></div>
+<div class="feed tool"><div class="feed-time">09:33:16</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Edit</span>
+      <span class="dur">144ms</span></div>
+      <div class="feed-text mono">/home/paulrule.guest/projects/current/math-api-sdlc-pipeline/BACKLOG.md</div></div></div>
+<div class="feed tool"><div class="feed-time">09:33:19</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__wrap_up</span>
+      <span class="dur">89ms</span></div>
+      <div class="feed-text mono">{&quot;recap&quot;: &quot;UC-005 (explore the API from its documentation) is drafted in use-cases/ and linked from B-5 in BACKLOG.md, on main and uncommitted. It has no open questions; leaving the availability check</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:33:29</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">I&#x27;ve drafted the use case for B-5 in [use-cases/UC-005-explore-api-documentation.md](use-cases/UC-005-explore-api-documentation.md) and linked it from B-5 in [BACKLOG.md](BACKLOG.md). Both changes are uncommitted on `main`.
+
+**What it says:**
+- **Main flow:** the Developer asks for the documentation, either machine-readable or as interactive pages. It covers the request (Operands as numbers or text), the Result (decimals as text), the supported Operations, every rejection with an example, and the limits. The Developer then tries a real Calculation from the pages.
+- **Alternatives:**
+  - 4a: a…</div></div></div>
+<div class="feed user"><div class="feed-time">09:34:10</div>
+      <div class="feed-body"><div class="feed-who">You</div>
+      <div class="feed-text">Base directory for this skill: /home/paulrule.guest/.claude/plugins/cache/sdlc-pipeline/sdlc-pipeline/0.9.0/skills/build-use-case
+
+You are the **orchestrator** (Engineering Manager) for a multi-agent SDLC pipeline. Drive the use case below through the OpenSpec workflow, delegating each phase to the matching subagent via the Agent tool. Do NOT do the phase work yourself — your job is sequencing, passing artifacts between agents, and enforcing the two human gates.
+
+## Use case
+use-cases/UC-005-explore-api-documentation.md
+
+If the use case above starts with `--senior` or `--junior` (or both), th…</div></div></div>
+<div class="feed tool"><div class="feed-time">09:34:17</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">150ms</span></div>
+      <div class="feed-text mono">{&quot;items&quot;: [{&quot;content&quot;: &quot;Prepare: ledger, branch&quot;, &quot;status&quot;: &quot;in_progress&quot;}, {&quot;content&quot;: &quot;Architect plans the change&quot;, &quot;status&quot;: &quot;pending&quot;}, {&quot;content&quot;: &quot;Spec review (plan gate)&quot;, &quot;status&quot;: &quot;pending&quot;},</div></div></div>
+<div class="feed tool"><div class="feed-time">09:34:18</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
+      <span class="dur">604ms</span></div>
+      <div class="feed-text mono">git branch --show-current &amp;&amp; git checkout -q -b feat/uc-5-explore-api-documentation &amp;&amp; git branch --show-current &amp;&amp; git status --short</div></div></div>
+<div class="feed thinking"><div class="feed-time">09:34:23</div>
+      <div class="feed-body"><div class="feed-who">Thinking</div>
+      <div class="feed-text">Setup is done: junior-dev will implement, and ledger lines L-1 through L-15 apply to this run with none due yet. I&#x27;m working on the feat/uc-5-explore-api-documentation branch.</div></div></div>
+<div class="feed tool"><div class="feed-time">09:34:23</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">83ms</span></div>
+      <div class="feed-text mono">{&quot;advance&quot;: true}</div></div></div>
+<div class="feed tool agent"><div class="feed-time">09:34:31</div>
+          <div class="feed-body">
+          <div class="feed-who"><span class="agent-badge" style="background:#6366f1">sdlc-pipeline:architect</span> ran <span class="dur">7m 39s</span></div>
+          <div class="feed-text">Architect UC-005 plan</div><div class="feed-result">The OpenSpec change is **add-api-documentation**. All four artifacts are written and `openspec validate add-api-documentation --strict` passes (&quot;Change &#x27;add-api-documentation&#x27; is valid&quot;, 4/4 artifacts complete). No project code was edited.
+
+Files:
+- /home/paulrule.guest/projects/current/math-api-sdlc-pipeline/openspec/changes/add-api-documentation/proposal.md
+- /home/paulrule.guest/projects/curre…</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:34:34</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">The architect is planning UC-005. The spec review runs once its plan is in.</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:42:15</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">✅ Architect: the change `add-api-documentation` is planned and passes strict validation. It uses springdoc 3.2.0, one `OpenApiCustomizer` for everything generated, and an `ApiDocumentationTest` that checks each documented example against the live response. Running the spec review.</div></div></div>
+<div class="feed tool"><div class="feed-time">09:42:15</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">216ms</span></div>
+      <div class="feed-text mono">{&quot;advance&quot;: true}</div></div></div>
+<div class="feed tool agent"><div class="feed-time">09:42:20</div>
+          <div class="feed-body">
+          <div class="feed-who"><span class="agent-badge" style="background:#8b5cf6">sdlc-pipeline:spec-reviewer</span> ran <span class="dur">1m 58s</span> <span class="verdict caught">handed-back</span></div>
+          <div class="feed-text">Spec review add-api-documentation</div><div class="feed-result">**Verdict: APPROVE.** I found nothing blocking. Below are five advisory items and my answers to your four questions.
+
+`openspec validate add-api-documentation --strict` passed (&quot;Change &#x27;add-api-documentation&#x27; is valid&quot;).
+
+## Your four questions
+
+1. **Copying the invalid-request `detail` texts into config (STANDARDS §4).** Acceptable. The §4 rule (&quot;generated from it … never copied&quot;) covers values …</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:42:23</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">The spec reviewer is checking the plan and the architect&#x27;s open items. Gate 1 comes after its verdict.</div></div></div>
+<div class="feed assistant"><div class="feed-time">09:44:19</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">You&#x27;ve hit your 5-hour limit · resets 10pm (Australia/Sydney)</div></div></div>
+<div class="feed user"><div class="feed-time">11:00:20</div>
+      <div class="feed-body"><div class="feed-who">You</div>
+      <div class="feed-text">Try again</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:00:32</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">✅ Spec review: APPROVE, with 5 advisory findings. All the ledger lessons held.</div></div></div>
+<div class="feed tool"><div class="feed-time">11:00:32</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">114ms</span></div>
+      <div class="feed-text mono">{&quot;advance&quot;: true}</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:00:44</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">## 🚦 Gate 1: approve the plan for `add-api-documentation` (UC-005)
+
+**The plan:**
+- **Docs at springdoc&#x27;s defaults:** springdoc 3.2.0 serves `/v3/api-docs` and `/swagger-ui.html`, with no `springdoc.*` settings. Actuator stays out of the docs by default.
+- **Explicit responses on the controller:** 200 is documented as `application/json`, not `*/*`; 400 and 422 as `application/problem+json`.
+- **One customizer in `config.OpenApiConfig` does all the generating:**
+  - the `operation` values come from `Operation.values()`;
+  - `a` and `b` are documented as number or string, with the BR-1 limits;
+…</div></div></div>
+<div class="feed tool"><div class="feed-time">11:00:49</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">AskUserQuestion</span>
+      <span class="dur">32.4s</span></div>
+      <div class="feed-text mono">{&quot;questions&quot;: [{&quot;question&quot;: &quot;Gate 1 for add-api-documentation (UC-005): spec reviewer approved with 5 advisories (A1 PRD wording vs B-9, A2 red step is only a compile failure, A3 STANDARDS \u00a78 unt</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:01:25</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">Gate 1 is approved: fix A1–A5, describe framework errors once in the API description, and accept docs on in every profile until B-6. Sending this to the architect.</div></div></div>
+<div class="feed tool agent"><div class="feed-time">11:01:31</div>
+          <div class="feed-body">
+          <div class="feed-who"><span class="agent-badge" style="background:#6366f1">sdlc-pipeline:architect</span> re-ran (resumed) <span class="dur">1m 7s</span></div>
+          <div class="feed-text">Gate 1 approved; fold in A1–A5</div><div class="feed-result">I folded the Gate 1 decisions and findings A1–A5 into add-api-documentation. `openspec validate add-api-documentation --strict` passes (&quot;Change &#x27;add-api-documentation&#x27; is valid&quot;).
+
+Only design.md and tasks.md changed. The spec and proposal.md are untouched.
+
+**Gate 1 decisions**, recorded as &quot;accepted at Gate 1, 2026-11-09&quot; in both files:
+- **design.md:** a new section &quot;Gate 1 decisions and post-…</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:01:35</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">The architect is folding in A1–A5 and the Gate 1 decisions. Implementation starts once it confirms the plan still validates.</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:02:42</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">✅ Architect revision: A1–A5 and the Gate 1 decisions folded in, and strict validation passes. The proposal&#x27;s Impact line not mentioning the A5 message change is trivial; it isn&#x27;t worth another round. Starting implementation.</div></div></div>
+<div class="feed tool"><div class="feed-time">11:02:42</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">85ms</span></div>
+      <div class="feed-text mono">{&quot;advance&quot;: true}</div></div></div>
+<div class="feed tool agent"><div class="feed-time">11:02:48</div>
+          <div class="feed-body">
+          <div class="feed-who"><span class="agent-badge" style="background:#ec4899">sdlc-pipeline:junior-dev</span> ran <span class="dur">5m 38s</span></div>
+          <div class="feed-text">Implement UC-005</div><div class="feed-result">## Result: add-api-documentation is fully implemented (8 of 8 tasks done, OpenSpec state `all_done`)
+
+`./gradlew clean build` passes: 155 tests, 0 failures. That is the 137 existing tests plus 18 new ones. Nothing was committed or pushed. No app process is left running. The &quot;Workflow follow-up&quot; bullets were not touched.
+
+### Tasks
+- **1.1** I edited PRD §3.3 and STANDARDS §4 word for word as the …</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:02:53</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">The junior dev is implementing `add-api-documentation`. QA runs once it reports back.</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:08:30</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">✅ Implement: all 8 tasks done and 155 tests pass. The failing output was real: 17 of the new tests got a 404 where they expected 200, and one where it expected a redirect. The junior dev broke each &quot;Required&quot; constraint on purpose and the matching tests failed (L-13). The running app answered real calls, and no springdoc behaviour differed from what the architect probed. Running QA now.</div></div></div>
+<div class="feed tool agent"><div class="feed-time">11:08:35</div>
+          <div class="feed-body">
+          <div class="feed-who"><span class="agent-badge" style="background:#14b8a6">sdlc-pipeline:qa</span> ran <span class="dur">4m 18s</span> <span class="verdict caught">handed-back</span></div>
+          <div class="feed-text">QA verify add-api-documentation</div><div class="feed-result">## QA verification: `add-api-documentation`. Verdict: READY TO ARCHIVE
+
+Every spec requirement has a test. I broke the code 21 ways in a scratch copy: every behaviour change failed a named test, and the one break that stayed green is the limit accepted at Gate 1. The build passes, all 8 tasks are really done, and all three ledger lessons held. I found nothing blocking. There is one low-severity w…</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:08:39</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">QA is checking the documentation tests by breaking the docs in a scratch copy. The code review follows if it passes.</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:12:59</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">✅ QA: READY. QA broke the docs 21 ways; 20 failed a named test, and the one that stayed green is the copied-value limit you accepted at Gate 1. L-1, L-6 and L-13 held.
+
+One low-severity finding (Q1): the API description says &quot;every other HTTP error is Problem Details&quot;, but an unhandled 500 returns Spring Boot&#x27;s default error body instead. Starting the code review, which can fix the wording in place.</div></div></div>
+<div class="feed tool agent"><div class="feed-time">11:13:04</div>
+          <div class="feed-body">
+          <div class="feed-who"><span class="agent-badge" style="background:#f59e0b">sdlc-pipeline:senior-dev</span> ran <span class="dur">1m 27s</span> <span class="verdict caught">fixed-in-place</span></div>
+          <div class="feed-text">Code review add-api-documentation</div><div class="feed-result">## Verdict: APPROVE (after one fix, QA Q1)
+
+I fixed QA&#x27;s Q1 and recorded it as a post-Gate-1 departure (L-1). Nothing goes back to the architect or junior. The build passes.
+
+### What I changed
+1. **`/home/paulrule.guest/projects/current/math-api-sdlc-pipeline/src/main/java/com/paulrule/mathapi/config/OpenApiConfig.java:38-39`** — the API description now says `&quot;Every other client error (4xx, for …</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:13:09</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">The senior dev is running the final code review and fixing the Q1 wording. Gate 2 comes after its verdict.</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:14:35</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">✅ Code review: APPROVE. It fixed Q1 in place, recorded as a post-Gate-1 departure. C2 (older PRD wording) is outstanding and C3 is waived.</div></div></div>
+<div class="feed tool"><div class="feed-time">11:14:36</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
+      <span class="dur">1.1s</span></div>
+      <div class="feed-text mono">git status --short -uall</div></div></div>
+<div class="feed tool"><div class="feed-time">11:14:36</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
+      <span class="dur">1.2s</span></div>
+      <div class="feed-text mono">{&quot;advance&quot;: true}</div></div></div>
+<div class="feed thinking"><div class="feed-time">11:14:48</div>
+      <div class="feed-body"><div class="feed-who">Thinking</div>
+      <div class="feed-text">Both gates are green: QA marked the change READY and code review approved it, with 155 tests passing. Two items stay open for a decision: the PRD §3.2 wording about error responses, and the copied request-limit text, which was waived.</div></div></div>
+<div class="feed tool"><div class="feed-time">11:14:48</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">AskUserQuestion</span>
+      <span class="dur">1m 45s</span></div>
+      <div class="feed-text mono">{&quot;questions&quot;: [{&quot;question&quot;: &quot;Gate 2 for add-api-documentation (UC-005): QA READY (20/21 code breaks caught; the survivor is the Gate-1-accepted limit), code review APPROVE with Q1 fixed, 155 tests gre</div></div></div>
+<div class="feed assistant"><div class="feed-time">11:16:39</div>
+      <div class="feed-body"><div class="feed-who">Claude</div>
+      <div class="feed-text">Archiving. The delta adds a new capability, `api-documentation`, with only ADDED requirements.</div></div></div>
+<div class="feed tool"><div class="feed-time">11:16:41</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
+      <span class="dur">4.1s</span></div>
+      <div class="feed-text mono">openspec list --json | python3 -c &quot;import json,sys;d=json.load(sys.stdin);print([(c[&#x27;name&#x27;],c[&#x27;completedTasks&#x27;],c[&#x27;totalTasks&#x27;]) for c in d[&#x27;changes&#x27;]])&quot;; openspec status --change add-api-documentati…</div></div></div>
+<div class="feed thinking"><div class="feed-time">11:16:50</div>
+      <div class="feed-body"><div class="feed-who">Thinking</div>
+      <div class="feed-text">The api-documentation spec validated and the change is archived, so I&#x27;m ticking B-5 to complete the MVP and writing the retrospective.</div></div></div>
+<div class="feed tool"><div class="feed-time">11:16:52</div>
+      <div class="feed-body"><div class="feed-who"><span class="tool-tag">Bash</span>
+      <span class="dur">—</span></div>
+      <div class="feed-text mono">python3 - &lt;&lt;&#x27;EOF&#x27; p=&quot;BACKLOG.md&quot;; s=open(p).read() old=&quot;- [ ] **B-5: Explore the API from its documentation** — written: [UC-005](use-cases/UC-005-explore-api-documentation.md)&quot; new=&quot;- [x] **B-5: Exp…</div></div></div>
+<div class="feed tool"><div class="feed-time">11:16:53</div>
       <div class="feed-body"><div class="feed-who"><span class="tool-tag">mcp__ccd_turn__update_plan</span>
       <span class="dur">—</span></div>
       <div class="feed-text mono">{&quot;advance&quot;: true}</div></div></div></div></details>

@@ -5,7 +5,7 @@
      Entries mirror the original math-api backlog one-for-one (see "Original item") so the two builds can be compared.
      Original item 5b (repo hygiene, from its v2 audit of its own code) has no entry. -->
 
-## MVP (4/5 built)
+## MVP (5/5 built)
 
 - [x] **B-1: Check the service is available** — built: [UC-001](use-cases/UC-001-check-service-availability.md), change add-service-availability
   - **Actor:** Client service
@@ -31,7 +31,7 @@
   - **Why here:** Closes the resource-exhaustion hole before anyone else calls the API.
   - **Depends on:** B-2
   - **Original item:** 4 (`add-operand-limits`)
-- [ ] **B-5: Explore the API from its documentation**
+- [x] **B-5: Explore the API from its documentation** — built: [UC-005](use-cases/UC-005-explore-api-documentation.md), change add-api-documentation
   - **Actor:** Developer
   - **Goal:** Learn every Operation, request shape, Result and rejection from interactive API documentation.
   - **Why here:** Completes v1 scope (PRD §3.3): developers can integrate without reading the code.
