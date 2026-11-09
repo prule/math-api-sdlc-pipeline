@@ -36,6 +36,7 @@ link here by id, so a lesson that comes back adds a count, not another copy of i
 | L-7 | An accepted risk that breaks a spec requirement names it, for Gate 1 to accept | `openspec/config.yaml` (rules.design) | 1 | open |
 | L-8 | Settle arity timing: `Operation.arity()` arrives with the first unary Operation; align STANDARDS §3 and the DOMAIN-MODEL glossary | `docs/STANDARDS.md`; `docs/DOMAIN-MODEL.md` | 1 | open |
 | L-9 | Tasks write BigDecimal test values as `new BigDecimal("<text>")` | `.claude/sdlc-profile.md` | 1 | open |
+| L-10 | If a change makes a capability's Purpose line untrue, add a task to correct it after archive | `openspec/config.yaml` (rules.tasks) | 1 | open |
 
 ## Closed
 

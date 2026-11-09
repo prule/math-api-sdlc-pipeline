@@ -25,6 +25,7 @@ class CalculationControllerTest {
     private static final String PATH = "/api/v1/calculations";
     private static final String INVALID_REQUEST = "/problems/invalid-request";
     private static final String UNKNOWN_OPERATION = "/problems/unknown-operation";
+    private static final String DIVISION_BY_ZERO = "/problems/division-by-zero";
 
     @Autowired
     private MockMvc mvc;
@@ -46,6 +47,13 @@ class CalculationControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_PROBLEM_JSON))
                 .andExpect(jsonPath("$.type").value(type));
+    }
+
+    private ResultActions expectDivisionByZero(String body) throws Exception {
+        return send(body)
+                .andExpect(status().isUnprocessableContent())
+                .andExpect(content().contentType(MediaType.APPLICATION_PROBLEM_JSON))
+                .andExpect(jsonPath("$.type").value(DIVISION_BY_ZERO));
     }
 
     // BR-3: ADD is exact
@@ -201,12 +209,12 @@ class CalculationControllerTest {
     @Test
     void rejectsASupportedNameInTheWrongLetterCase() throws Exception {
         expectProblem("{\"operation\":\"add\",\"a\":1,\"b\":2}", UNKNOWN_OPERATION)
-                .andExpect(jsonPath("$.detail", containsString("ADD, SUBTRACT, MULTIPLY")));
+                .andExpect(jsonPath("$.detail", containsString("ADD, SUBTRACT, MULTIPLY, DIVIDE")));
     }
 
     @Test
     void rejectsAnOperationNotYetSupported() throws Exception {
-        expectProblem("{\"operation\":\"DIVIDE\",\"a\":1,\"b\":2}", UNKNOWN_OPERATION);
+        expectProblem("{\"operation\":\"POWER\",\"a\":1,\"b\":2}", UNKNOWN_OPERATION);
     }
 
     @Test
@@ -235,6 +243,134 @@ class CalculationControllerTest {
     @Test
     void reportsMalformedJsonBeforeAnUnknownOperation() throws Exception {
         expectProblem("{\"operation\":\"add\",\"a\":1,", INVALID_REQUEST);
+    }
+
+    // BR-3: DIVIDE is rounded to 34 significant digits, half even; BR-4: then normalised
+
+    @Test
+    void dividesOneByThreeToThirtyFourSignificantDigits() throws Exception {
+        expectBody(
+                "{\"operation\":\"DIVIDE\",\"a\":1,\"b\":\"3\"}",
+                "{\"operation\":\"DIVIDE\",\"a\":\"1\",\"b\":\"3\",\"result\":\"0.3333333333333333333333333333333333\"}");
+    }
+
+    @Test
+    void roundsTheLastDigitOfTwoThirdsUp() throws Exception {
+        expectResult("{\"operation\":\"DIVIDE\",\"a\":\"2\",\"b\":\"3\"}", "0.6666666666666666666666666666666667");
+    }
+
+    @Test
+    void roundsATieDownToTheEvenDigit() throws Exception {
+        expectResult(
+                "{\"operation\":\"DIVIDE\",\"a\":\"12345678901234567890123456789012345\",\"b\":\"10\"}",
+                "1234567890123456789012345678901234");
+    }
+
+    @Test
+    void roundsATieUpToTheEvenDigit() throws Exception {
+        expectResult(
+                "{\"operation\":\"DIVIDE\",\"a\":\"12345678901234567890123456789012335\",\"b\":\"10\"}",
+                "1234567890123456789012345678901234");
+    }
+
+    @Test
+    void dividesExactlyWithoutPadding() throws Exception {
+        expectBody(
+                "{\"operation\":\"DIVIDE\",\"a\":\"1\",\"b\":\"4\"}",
+                "{\"operation\":\"DIVIDE\",\"a\":\"1\",\"b\":\"4\",\"result\":\"0.25\"}");
+    }
+
+    @Test
+    void dividesByANegativeDivisor() throws Exception {
+        expectResult("{\"operation\":\"DIVIDE\",\"a\":\"1\",\"b\":\"-4\"}", "-0.25");
+    }
+
+    @Test
+    void dividesZeroToZero() throws Exception {
+        expectBody(
+                "{\"operation\":\"DIVIDE\",\"a\":\"0.00\",\"b\":\"-3\"}",
+                "{\"operation\":\"DIVIDE\",\"a\":\"0.00\",\"b\":\"-3\",\"result\":\"0\"}");
+    }
+
+    @Test
+    void normalisesAWholeQuotient() throws Exception {
+        expectBody(
+                "{\"operation\":\"DIVIDE\",\"a\":\"1.50\",\"b\":\"0.5\"}",
+                "{\"operation\":\"DIVIDE\",\"a\":\"1.50\",\"b\":\"0.5\",\"result\":\"3\"}");
+    }
+
+    @Test
+    void presentsALargeQuotientInPlainNotation() throws Exception {
+        expectResult("{\"operation\":\"DIVIDE\",\"a\":\"100\",\"b\":\"0.01\"}", "10000");
+    }
+
+    // BR-2: division by zero is rejected, in every zero form, as a number or as text
+
+    @Test
+    void rejectsAZeroDivisorAsText() throws Exception {
+        expectDivisionByZero("{\"operation\":\"DIVIDE\",\"a\":\"1\",\"b\":\"0\"}")
+                .andExpect(jsonPath("$.status").value(422))
+                .andExpect(jsonPath("$.title").exists())
+                .andExpect(jsonPath("$.detail").exists());
+    }
+
+    @Test
+    void rejectsAZeroDivisorAsANumber() throws Exception {
+        expectDivisionByZero("{\"operation\":\"DIVIDE\",\"a\":1,\"b\":0}");
+    }
+
+    @Test
+    void rejectsAScaledZeroDivisorAsText() throws Exception {
+        expectDivisionByZero("{\"operation\":\"DIVIDE\",\"a\":\"1\",\"b\":\"0.00\"}");
+    }
+
+    @Test
+    void rejectsAScaledZeroDivisorAsANumber() throws Exception {
+        expectDivisionByZero("{\"operation\":\"DIVIDE\",\"a\":1,\"b\":0.00}");
+    }
+
+    @Test
+    void rejectsANegativeZeroDivisorAsText() throws Exception {
+        expectDivisionByZero("{\"operation\":\"DIVIDE\",\"a\":\"1\",\"b\":\"-0\"}");
+    }
+
+    @Test
+    void rejectsANegativeZeroDivisorAsANumber() throws Exception {
+        expectDivisionByZero("{\"operation\":\"DIVIDE\",\"a\":1,\"b\":-0}");
+    }
+
+    @Test
+    void rejectsZeroDividedByZero() throws Exception {
+        expectDivisionByZero("{\"operation\":\"DIVIDE\",\"a\":\"0\",\"b\":\"0\"}");
+    }
+
+    @Test
+    void divisionByZeroReasonEchoesNoOperandAndNoInternals() throws Exception {
+        // UC-003 R-2, UC-002 R-7
+        expectDivisionByZero("{\"operation\":\"DIVIDE\",\"a\":\"98765\",\"b\":\"0.00\"}")
+                .andExpect(jsonPath("$.detail", not(containsString("98765"))))
+                .andExpect(jsonPath("$.detail", not(containsString("0.00"))))
+                .andExpect(jsonPath("$.detail", not(containsString("Exception"))))
+                .andExpect(jsonPath("$.detail", not(containsString("java."))))
+                .andExpect(jsonPath("$.detail", not(containsString("org.springframework"))))
+                .andExpect(jsonPath("$.detail", not(containsString("com.paulrule"))));
+    }
+
+    // UC-003 R-1: only the first failure is reported
+
+    @Test
+    void reportsANonNumericDividendBeforeDivisionByZero() throws Exception {
+        expectProblem("{\"operation\":\"DIVIDE\",\"a\":\"abc\",\"b\":0}", INVALID_REQUEST);
+    }
+
+    @Test
+    void reportsAMissingDividendBeforeDivisionByZero() throws Exception {
+        expectProblem("{\"operation\":\"DIVIDE\",\"b\":0}", INVALID_REQUEST);
+    }
+
+    @Test
+    void reportsAnUnknownOperationBeforeDivisionByZero() throws Exception {
+        expectProblem("{\"operation\":\"divide\",\"a\":1,\"b\":0}", UNKNOWN_OPERATION);
     }
 
     // R-7: every rejection is Problem Details without internals

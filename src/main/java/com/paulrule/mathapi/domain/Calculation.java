@@ -11,7 +11,7 @@ public record Calculation(Operation operation, BigDecimal a, BigDecimal b) {
         Objects.requireNonNull(b, "b");
     }
 
-    /** Exact (BR-3) and normalised (BR-4); a zero Result strips to {@code BigDecimal.ZERO}. */
+    /** Rounded only where BR-3 says, and normalised (BR-4); a zero Result strips to {@code BigDecimal.ZERO}. */
     public BigDecimal result() {
         return operation.apply(a, b).stripTrailingZeros();
     }

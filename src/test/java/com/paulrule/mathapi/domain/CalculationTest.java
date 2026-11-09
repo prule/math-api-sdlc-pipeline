@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class CalculationTest {
 
@@ -77,6 +79,80 @@ class CalculationTest {
     @Test
     void normalisesAWholeResult() {
         assertThat(result(Operation.ADD, "50", "50")).isEqualTo(new BigDecimal("1E+2"));
+    }
+
+    // BR-3: DIVIDE is rounded to 34 significant digits, half even; BR-4: then normalised
+
+    @Test
+    void dividesOneByThreeToThirtyFourSignificantDigits() {
+        assertThat(result(Operation.DIVIDE, "1", "3"))
+                .isEqualTo(new BigDecimal("0.3333333333333333333333333333333333"));
+    }
+
+    @Test
+    void roundsTheLastDigitOfTwoThirdsUp() {
+        assertThat(result(Operation.DIVIDE, "2", "3"))
+                .isEqualTo(new BigDecimal("0.6666666666666666666666666666666667"));
+    }
+
+    @Test
+    void roundsATieDownToTheEvenDigit() {
+        assertThat(result(Operation.DIVIDE, "12345678901234567890123456789012345", "10"))
+                .isEqualTo(new BigDecimal("1234567890123456789012345678901234"));
+    }
+
+    @Test
+    void roundsATieUpToTheEvenDigit() {
+        assertThat(result(Operation.DIVIDE, "12345678901234567890123456789012335", "10"))
+                .isEqualTo(new BigDecimal("1234567890123456789012345678901234"));
+    }
+
+    @Test
+    void dividesExactlyWithoutPadding() {
+        assertThat(result(Operation.DIVIDE, "1", "4")).isEqualTo(new BigDecimal("0.25"));
+    }
+
+    @Test
+    void dividesByANegativeDivisor() {
+        assertThat(result(Operation.DIVIDE, "1", "-4")).isEqualTo(new BigDecimal("-0.25"));
+    }
+
+    @Test
+    void dividesZeroToZero() {
+        assertThat(result(Operation.DIVIDE, "0.00", "-3")).isEqualTo(BigDecimal.ZERO);
+    }
+
+    @Test
+    void normalisesAWholeQuotient() {
+        assertThat(result(Operation.DIVIDE, "1.50", "0.5")).isEqualTo(new BigDecimal("3"));
+    }
+
+    @Test
+    void normalisesALargeQuotient() {
+        assertThat(result(Operation.DIVIDE, "100", "0.01")).isEqualTo(new BigDecimal("1E+4"));
+    }
+
+    // BR-2: division by zero is rejected
+
+    @ParameterizedTest
+    @ValueSource(strings = {"0", "0.00", "-0"})
+    void rejectsDivisionByZeroInEveryZeroForm(String zero) {
+        assertThatThrownBy(() -> result(Operation.DIVIDE, "1", zero)).isInstanceOf(DivisionByZeroException.class);
+    }
+
+    @Test
+    void rejectsZeroDividedByZero() {
+        assertThatThrownBy(() -> result(Operation.DIVIDE, "0", "0")).isExactlyInstanceOf(DivisionByZeroException.class);
+    }
+
+    @Test
+    void divisionByZeroReasonEchoesNoOperand() {
+        // UC-003 R-2
+        assertThatThrownBy(() -> result(Operation.DIVIDE, "98765", "0.00"))
+                .isInstanceOf(DivisionByZeroException.class)
+                .message()
+                .doesNotContain("98765")
+                .doesNotContain("0.00");
     }
 
     @Test
