@@ -1,6 +1,6 @@
 # math-api (sdlc-pipeline rebuild)
 
-> Demonstration project: a rebuild of [`math-api`](../math-api) from the same PRD, domain model,
+> Demonstration project: a rebuild of [`math-api`](https://github.com/prule/math-api) from the same PRD, domain model,
 > standards and backlog, this time delivered by the multi-agent
 > [sdlc-pipeline](https://github.com/prule/sdlc-pipeline) plugin instead of a single-agent workflow.
 
