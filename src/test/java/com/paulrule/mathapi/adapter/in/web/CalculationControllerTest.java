@@ -2,6 +2,7 @@ package com.paulrule.mathapi.adapter.in.web;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.not;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -9,6 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.paulrule.mathapi.application.PerformCalculation;
+import java.time.Duration;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
@@ -26,6 +28,7 @@ class CalculationControllerTest {
     private static final String INVALID_REQUEST = "/problems/invalid-request";
     private static final String UNKNOWN_OPERATION = "/problems/unknown-operation";
     private static final String DIVISION_BY_ZERO = "/problems/division-by-zero";
+    private static final String OPERAND_OUT_OF_RANGE = "/problems/operand-out-of-range";
 
     @Autowired
     private MockMvc mvc;
@@ -47,6 +50,11 @@ class CalculationControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_PROBLEM_JSON))
                 .andExpect(jsonPath("$.type").value(type));
+    }
+
+    private static String padTo(String body, int length) {
+        var end = body.lastIndexOf('}');
+        return body.substring(0, end) + " ".repeat(length - body.length()) + body.substring(end);
     }
 
     private ResultActions expectDivisionByZero(String body) throws Exception {
@@ -371,6 +379,167 @@ class CalculationControllerTest {
     @Test
     void reportsAnUnknownOperationBeforeDivisionByZero() throws Exception {
         expectProblem("{\"operation\":\"divide\",\"a\":1,\"b\":0}", UNKNOWN_OPERATION);
+    }
+
+    // BR-1: an Operand outside the limits is rejected (UC-004 R-2, R-4)
+
+    @Test
+    void acceptsAScaleOfMinusOneThousand() throws Exception {
+        expectResult("{\"operation\":\"ADD\",\"a\":\"1E+1000\",\"b\":\"0\"}", "1" + "0".repeat(1000));
+    }
+
+    @Test
+    void acceptsAScaleOfOneThousand() throws Exception {
+        expectResult("{\"operation\":\"ADD\",\"a\":\"1E-1000\",\"b\":\"0\"}", "0." + "0".repeat(999) + "1");
+    }
+
+    @Test
+    void acceptsOneHundredSignificantDigits() throws Exception {
+        expectResult("{\"operation\":\"MULTIPLY\",\"a\":\"" + "1".repeat(100) + "\",\"b\":\"1\"}", "1".repeat(100));
+    }
+
+    @Test
+    void measuresAnOperandAsWritten() throws Exception {
+        expectResult("{\"operation\":\"MULTIPLY\",\"a\":\"1E+100\",\"b\":\"1\"}", "1" + "0".repeat(100));
+    }
+
+    @Test
+    void rejectsAScaleOfMinusOneThousandAndOne() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":\"1E+1001\",\"b\":\"1\"}", OPERAND_OUT_OF_RANGE)
+                .andExpect(jsonPath("$.status").value(400))
+                .andExpect(jsonPath("$.title").exists())
+                .andExpect(jsonPath("$.detail", containsString("Operand a")));
+    }
+
+    @Test
+    void rejectsAScaleOfOneThousandAndOneInB() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":\"1\",\"b\":\"1E-1001\"}", OPERAND_OUT_OF_RANGE)
+                .andExpect(jsonPath("$.detail", containsString("Operand b")));
+    }
+
+    @Test
+    void rejectsOneHundredAndOneSignificantDigits() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":\"1" + "0".repeat(100) + "\",\"b\":\"1\"}", OPERAND_OUT_OF_RANGE);
+    }
+
+    @Test
+    void rejectsOneHundredAndOneSignificantDigitsAsANumber() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":1" + "0".repeat(100) + ",\"b\":1}", OPERAND_OUT_OF_RANGE);
+    }
+
+    @Test
+    void rejectsAShortButEnormousOperandAtOnce() {
+        assertTimeoutPreemptively(
+                Duration.ofSeconds(1),
+                () -> expectProblem(
+                        "{\"operation\":\"MULTIPLY\",\"a\":1e999999999,\"b\":\"1e999999999\"}", OPERAND_OUT_OF_RANGE));
+    }
+
+    @Test
+    void rejectsEnormousScalesInADivision() throws Exception {
+        expectProblem("{\"operation\":\"DIVIDE\",\"a\":\"1E-999999999\",\"b\":\"1E+999999999\"}", OPERAND_OUT_OF_RANGE);
+    }
+
+    @Test
+    void operandOutOfRangeReasonNamesTheOperandButNotItsValue() throws Exception {
+        // UC-004 R-2, UC-002 R-7
+        expectProblem("{\"operation\":\"ADD\",\"a\":\"1\",\"b\":\"98765E+1001\"}", OPERAND_OUT_OF_RANGE)
+                .andExpect(jsonPath("$.detail", containsString("Operand b")))
+                .andExpect(jsonPath("$.detail", not(containsString("98765"))))
+                .andExpect(jsonPath("$.detail", not(containsString("98765E+1001"))))
+                // the value's own rendering, 9.8765E+1005
+                .andExpect(jsonPath("$.detail", not(containsString("8765"))))
+                .andExpect(jsonPath("$.detail", not(containsString("Exception"))))
+                .andExpect(jsonPath("$.detail", not(containsString("java."))))
+                .andExpect(jsonPath("$.detail", not(containsString("tools.jackson"))))
+                .andExpect(jsonPath("$.detail", not(containsString("org.springframework"))))
+                .andExpect(jsonPath("$.detail", not(containsString("com.paulrule"))));
+    }
+
+    // UC-004 R-1: an oversized request is rejected
+
+    @Test
+    void rejectsABodyOneCharacterOverTheLimit() throws Exception {
+        expectProblem(padTo("{\"operation\":\"ADD\",\"a\":1,\"b\":2}", 16385), INVALID_REQUEST)
+                .andExpect(jsonPath("$.detail", containsString("16,384")))
+                .andExpect(jsonPath("$.detail", containsString("1,000")));
+    }
+
+    @Test
+    void acceptsABodyExactlyAtTheLimit() throws Exception {
+        expectResult(padTo("{\"operation\":\"ADD\",\"a\":1,\"b\":2}", 16384), "3");
+    }
+
+    @Test
+    void rejectsOperandTextOneCharacterOverTheLimit() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":\"1" + "0".repeat(1000) + "\",\"b\":1}", INVALID_REQUEST);
+    }
+
+    @Test
+    void rejectsAnOperandNumberOneCharacterOverTheLimit() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":1" + "0".repeat(1000) + ",\"b\":1}", INVALID_REQUEST);
+    }
+
+    @Test
+    void doesNotRejectOperandTextExactlyAtTheLimitForSize() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":\"1" + "0".repeat(999) + "\",\"b\":1}", OPERAND_OUT_OF_RANGE);
+    }
+
+    @Test
+    void doesNotRejectAnOperandNumberExactlyAtTheLimitForSize() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":1" + "0".repeat(999) + ",\"b\":1}", OPERAND_OUT_OF_RANGE);
+    }
+
+    @Test
+    void rejectsAnOperationNameOverTheLimit() throws Exception {
+        expectProblem("{\"operation\":\"" + "X".repeat(1001) + "\",\"a\":1,\"b\":2}", INVALID_REQUEST);
+    }
+
+    @Test
+    void doesNotRejectAnOperationNameExactlyAtTheLimitForSize() throws Exception {
+        expectProblem("{\"operation\":\"" + "X".repeat(1000) + "\",\"a\":1,\"b\":2}", UNKNOWN_OPERATION);
+    }
+
+    // An Operand that cannot be represented is rejected (design.md Decision 5)
+
+    @Test
+    void rejectsAnUnrepresentableExponentAsText() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":\"1e2147483648\",\"b\":1}", INVALID_REQUEST);
+    }
+
+    @Test
+    void rejectsAnUnrepresentableExponentAsANumber() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":1e2147483648,\"b\":1}", INVALID_REQUEST);
+    }
+
+    // UC-004 R-3: only the first failure is reported
+
+    @Test
+    void reportsAnOversizedBodyBeforeAnUnknownOperation() throws Exception {
+        expectProblem(padTo("{\"operation\":\"add\",\"a\":1,\"b\":2}", 16385), INVALID_REQUEST);
+    }
+
+    @Test
+    void reportsAMissingOperandBeforeAnOutOfRangeOperand() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":\"1E+1001\"}", INVALID_REQUEST);
+    }
+
+    @Test
+    void reportsAnUnknownOperationBeforeAnOutOfRangeOperand() throws Exception {
+        expectProblem("{\"operation\":\"add\",\"a\":\"1E+1001\",\"b\":1}", UNKNOWN_OPERATION);
+    }
+
+    @Test
+    void reportsOnlyOperandAWhenBothAreOutOfRange() throws Exception {
+        expectProblem("{\"operation\":\"ADD\",\"a\":\"1E+1001\",\"b\":\"1E-1001\"}", OPERAND_OUT_OF_RANGE)
+                .andExpect(jsonPath("$.detail", containsString("Operand a")))
+                .andExpect(jsonPath("$.detail", not(containsString("Operand b"))));
+    }
+
+    @Test
+    void reportsAnOutOfRangeDividendBeforeDivisionByZero() throws Exception {
+        expectProblem("{\"operation\":\"DIVIDE\",\"a\":\"1E+1001\",\"b\":\"0\"}", OPERAND_OUT_OF_RANGE)
+                .andExpect(jsonPath("$.status").value(400));
     }
 
     // R-7: every rejection is Problem Details without internals
